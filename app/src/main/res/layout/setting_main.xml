@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="43dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/background_uit">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-15dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:srcCompat="@drawable/arc_3" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:srcCompat="@drawable/avatar_img" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Lê Anh Tuấn"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20520948"
+                android:textAlignment="center" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/mail_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/mail_btn" />
+
+                <TextView
+                    android:id="@+id/mail_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="20520948@gm.uit.edu.vn"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mail_button"
+                    app:layout_constraintStart_toEndOf="@+id/mail_button"
+                    app:layout_constraintTop_toTopOf="@+id/mail_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/birthday_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/birthday_button" />
+
+                <TextView
+                    android:id="@+id/birthday_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="26/03/2002"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/birthday_button"
+                    app:layout_constraintStart_toEndOf="@+id/birthday_button"
+                    app:layout_constraintTop_toTopOf="@+id/birthday_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/domain_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/domain_button" />
+
+                <TextView
+                    android:id="@+id/domain_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Thương Mại Điện Tử"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/domain_button"
+                    app:layout_constraintStart_toEndOf="@+id/domain_button"
+                    app:layout_constraintTop_toTopOf="@+id/domain_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/location_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/location_btn" />
+
+                <TextView
+                    android:id="@+id/location_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="TP.Thủ Đức, TP.Hồ Chí Minh"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/location_button"
+                    app:layout_constraintStart_toEndOf="@+id/location_button"
+                    app:layout_constraintTop_toTopOf="@+id/location_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/class_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/class_btn" />
+
+                <TextView
+                    android:id="@+id/class_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="TMCL2020"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/class_button"
+                    app:layout_constraintStart_toEndOf="@+id/class_button"
+                    app:layout_constraintTop_toTopOf="@+id/class_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/phone_button"
+                    android:layout_width="35dp"
+                    android:layout_height="33dp"
+                    android:src="@tools:sample/avatars"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/phone_button" />
+
+                <TextView
+                    android:id="@+id/phone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="0987 654 321"
+                    android:textColor="@color/primary_color"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/phone_button"
+                    app:layout_constraintStart_toEndOf="@+id/phone_button"
+                    app:layout_constraintTop_toTopOf="@+id/phone_button"
+                    app:layout_constraintVertical_bias="0.50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/dangnhap_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_border_radius_2"
+                android:text="Đăng xuất"
+                android:textColor="@color/red"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
