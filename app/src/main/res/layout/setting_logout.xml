@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_background">
+    <!-- Đặt nền màu đen mờ cho toàn bộ layout -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="183dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext_border_radius"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <!-- Giao diện của hộp xác nhận đăng xuất -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Xuất"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn có chắc chắn bạn muốn thoát? Bạn sẽ cần phải đăng nhập lại để sử dụng ứng dụng."
+            android:layout_gravity="center"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="8dp"
+                android:text="HỦY"
+                android:background="@drawable/edittext_border_radius"
+                android:id="@+id/confirmButton"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_border_radius"
+                android:text="ĐĂNG XUẤT" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

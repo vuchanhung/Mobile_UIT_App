@@ -6,10 +6,13 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="43dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,7 +21,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="206dp"
                 android:background="@drawable/background_uit">
 
                 <ImageView
@@ -27,7 +30,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="-15dp"
                     android:backgroundTint="@color/white"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -38,7 +40,6 @@
                     android:id="@+id/imageView6"
                     android:layout_width="110dp"
                     android:layout_height="110dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -78,7 +79,6 @@
                     android:id="@+id/mail_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -111,7 +111,6 @@
                     android:id="@+id/birthday_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -144,7 +143,6 @@
                     android:id="@+id/domain_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -177,7 +175,6 @@
                     android:id="@+id/location_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -210,7 +207,6 @@
                     android:id="@+id/class_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -243,7 +239,6 @@
                     android:id="@+id/phone_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
-                    android:src="@tools:sample/avatars"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -268,12 +263,159 @@
                 android:id="@+id/dangnhap_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/button_border_radius_2"
                 android:text="Đăng xuất"
-                android:textColor="@color/red"
-                android:layout_marginLeft="17dp"
-                android:layout_marginRight="17dp"/>
+                android:textColor="@color/red" />
 
         </LinearLayout>
+
     </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:backgroundTint="@color/white"
+            android:layout_gravity="bottom"
+            android:id="@+id/app_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_button"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/home_bottom_btn" />
+
+                <TextView
+                    android:id="@+id/home_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trang chủ"
+                    android:textAlignment="center"
+                    android:textColor="@color/xam" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/tkb_button"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/tkb_bottom_btn" />
+
+                <TextView
+                    android:id="@+id/tkb_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TKB"
+                    android:textAlignment="center"
+                    android:textColor="@color/xam" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/qr_button"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/qr_bottom_btn" />
+
+                <TextView
+                    android:id="@+id/qr_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm danh"
+                    android:textAlignment="center"
+                    android:textColor="@color/xam" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/subject_button"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/subject_bottom_btn" />
+
+                <TextView
+                    android:id="@+id/subject_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Môn học"
+                    android:textAlignment="center"
+                    android:textColor="@color/xam" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/individual_button"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/individual_bottom_btn" />
+
+                <TextView
+                    android:id="@+id/individual_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cá nhân"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

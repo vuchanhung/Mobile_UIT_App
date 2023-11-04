@@ -13,7 +13,7 @@
         android:theme="@style/Theme.BigProject"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.logo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".logo">
+            android:name=".Activity.login">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
     </application>
