@@ -29,7 +29,7 @@ public class TrendsAdapter extends RecyclerView.Adapter<TrendsAdapter.Viewholder
     @NonNull
     @Override
     public TrendsAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflator= LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_trend_list,parent,false);
+        View inflator= LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_club_list,parent,false);
         context= parent.getContext();
         return new Viewholder(inflator);
     }
