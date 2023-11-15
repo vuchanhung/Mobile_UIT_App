@@ -36,7 +36,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.android.car.ui:car-ui-lib:2.5.1")
-    implementation ("com.google.firebase:firebase-database:22.0.0")
     implementation("com.firebase:firebase-client-android:2.5.2")
     implementation("com.google.firebase:firebase-auth:22.2.0")
     implementation("com.google.firebase:firebase-firestore:24.9.1")
