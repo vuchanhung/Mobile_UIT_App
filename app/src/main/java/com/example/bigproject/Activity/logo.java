@@ -18,7 +18,7 @@ public class logo extends AppCompatActivity {
             @Override
             public void run() {
                 // Tạo Intent để chuyển sang LoginActivity
-                Intent intent = new Intent(logo.this, com.example.bigproject.Activity.login.class);
+                Intent intent = new Intent(logo.this, com.example.bigproject.Activity.LoginActivity.class);
                 startActivity(intent);
                 finish(); // Đóng màn hình LogoActivity
             }
