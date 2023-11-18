@@ -1,5 +1,6 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -63,11 +64,11 @@ public class login extends AppCompatActivity {
                                         // Mật khẩu đúng, đăng nhập thành công
                                         Toast.makeText(login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                                         // Chuyển qua MainActivity
-//                                        Intent intent = new Intent(login.this, com.example.bigproject.Activity.MainActivity.class);
-//                                        startActivity(intent);
-//
-//                                        // Kết thúc activity hiện tại
-//                                        finish();
+                                        Intent intent = new Intent(login.this, com.example.bigproject.Activity.Setting_Activity.class);
+                                        startActivity(intent);
+
+                                        // Kết thúc activity hiện tại
+                                        finish();
                                     } else {
                                         // Mật khẩu không đúng
                                         Toast.makeText(login.this, "Mật khẩu không đúng", Toast.LENGTH_SHORT).show();
