@@ -25,6 +25,9 @@
             android:name=".Activity.login">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+        <activity android:name=".Activity.MainActivity">
+            <!-- Thêm các thuộc tính khác nếu cần -->
+        </activity>
     </application>
 
 </manifest>

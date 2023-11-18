@@ -55,7 +55,11 @@ public class MainActivity extends AppCompatActivity {
         items.add(new SeminarDomain("Sky Mavis Uni Tour - AXIE GAME JAM 2023","By UIT","seminar2"));
 
         recyclerViewSeminar=findViewById(R.id.seminar_list_detail);
-        recyclerViewSeminar.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        try {
+            recyclerViewTrends.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
 
         adapterSeminarList= new SeminarAdapter(items);
         recyclerViewSeminar.setAdapter(adapterSeminarList);
