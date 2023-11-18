@@ -28,6 +28,10 @@
         <activity android:name=".Activity.MainActivity">
             <!-- Thêm các thuộc tính khác nếu cần -->
         </activity>
+        <activity
+            android:name=".Activity.Setting_Activity">
+            <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
+        </activity>
     </application>
 
 </manifest>
