@@ -33,6 +33,10 @@
             android:name=".Activity.Setting_Activity">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+
+        <activity
+            android:name=".Activity.Semester">
+        </activity>
     </application>
 
 </manifest>

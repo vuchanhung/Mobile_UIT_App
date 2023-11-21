@@ -14,7 +14,7 @@ import com.example.bigproject.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Semester {public class SemesterActivity extends AppCompatActivity {
+public class Semester extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private SemesterAdapter semesterAdapter;
