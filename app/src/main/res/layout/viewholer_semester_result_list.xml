@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border_radius_2"
+            android:text="HK1, NH 2022-2023"
+            android:layout_gravity="center_horizontal"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/table_row_border">
+
+                <!-- Các cột -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MA MH"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/table_row_border"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LỚP"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TC"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/table_row_border"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="QT"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TH"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/table_row_border"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GK"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CK"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/table_row_border"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TB"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/table_row_border">
+
+                <!-- Các cột -->
+                <TextView
+                    android:id="@+id/class_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="class code" />
+
+                <TextView
+                    android:id="@+id/class1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="class" />
+
+                <TextView
+                    android:id="@+id/credit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="credit" />
+
+                <TextView
+                    android:id="@+id/progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="progress" />
+
+                <TextView
+                    android:id="@+id/practice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="practice" />
+
+                <TextView
+                    android:id="@+id/mid_term"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="mid_term" />
+
+                <TextView
+                    android:id="@+id/end_term"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="end_term" />
+
+                    <TextView
+                    android:id="@+id/average_score"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="average_score" />
+            </TableRow>
+
+            <!-- Thêm các hàng và cột khác tương tự -->
+
+        </TableLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
