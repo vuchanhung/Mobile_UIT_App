@@ -58,4 +58,4 @@ public class Semester extends AppCompatActivity {
         // Tương tự, bạn có thể set thông tin khác như điểm trung bình, tín chỉ tích lũy, vv...
     }
 }
-}
+

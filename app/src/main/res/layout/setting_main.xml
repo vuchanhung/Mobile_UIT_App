@@ -8,9 +8,10 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="730dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/bar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -180,10 +181,10 @@
                     android:id="@+id/mail_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
+                    android:src="@drawable/mail_btn"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/mail_btn" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/mail_text"
@@ -212,10 +213,10 @@
                     android:id="@+id/birthday_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
+                    android:src="@drawable/birthday_button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/birthday_button" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/birthday_text"
@@ -244,10 +245,10 @@
                     android:id="@+id/domain_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
+                    android:src="@drawable/domain_button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/domain_button" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/domain_text"
@@ -276,10 +277,10 @@
                     android:id="@+id/location_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
+                    android:src="@drawable/location_btn"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/location_btn" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/location_text"
@@ -308,10 +309,10 @@
                     android:id="@+id/phone_button"
                     android:layout_width="35dp"
                     android:layout_height="33dp"
+                    android:src="@drawable/phone_button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/phone_button" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/phone_text"
@@ -338,24 +339,34 @@
                 android:text="Đăng xuất"
                 android:textColor="@color/red" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="408dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+        app:layout_constraintStart_toStartOf="@id/scrollView2"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/white">
+            android:background=""
+            app:backgroundTint="@color/white"
+            app:layout_insetEdge="bottom">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -486,7 +497,6 @@
             </LinearLayout>
 
         </com.google.android.material.bottomappbar.BottomAppBar>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
