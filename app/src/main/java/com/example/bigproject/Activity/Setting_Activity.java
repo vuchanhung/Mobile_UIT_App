@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +29,7 @@ public class Setting_Activity extends AppCompatActivity {
     private TextView classTextView;
     private TextView phoneTextView;
     private TextView addressTexView;
-
+    private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
     @Override
@@ -51,6 +53,16 @@ public class Setting_Activity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+        dangXuatButton = findViewById(R.id.dangnhap_btn);
+        dangXuatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.setting_logout.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void initializeViews() {
