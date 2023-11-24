@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,8 @@ public class Setting_Activity extends AppCompatActivity {
     private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
+
+    private ImageButton semester;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +62,16 @@ public class Setting_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.setting_logout.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        semester = findViewById(R.id.imageButton2);
+        semester.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Semester.class);
                 startActivity(intent);
                 finish();
             }
