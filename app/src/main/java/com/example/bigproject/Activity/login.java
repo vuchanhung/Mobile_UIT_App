@@ -1,9 +1,9 @@
 package com.example.bigproject.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,7 +45,7 @@ public class login extends AppCompatActivity {
             }
 
             // Log mssv và password
-            Log.d("Login", "mssv: " + mssv + ", password: " + password);
+
 
             // Thực hiện truy vấn để lấy dữ liệu dựa trên mssv
             db.collection("User")
@@ -63,6 +63,14 @@ public class login extends AppCompatActivity {
                                     if (password.equals(dbPassword)) {
                                         // Mật khẩu đúng, đăng nhập thành công
                                         Toast.makeText(login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                                        // Lấy tên từ Firestore
+                                        String userName = document.getString("name");
+
+                                        // Lưu thông tin người dùng vào SharedPreferences
+                                        SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = preferences.edit();
+                                        editor.putString("mssv", mssv);
+                                        editor.apply();
                                         // Chuyển qua MainActivity
                                         Intent intent = new Intent(login.this, com.example.bigproject.Activity.Setting_Activity.class);
                                         startActivity(intent);

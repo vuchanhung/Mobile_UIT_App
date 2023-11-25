@@ -2,7 +2,7 @@ package com.example.bigproject.Model;
 
 public class User {
     private String name;
-    private String mssv;
+    private String MSSV;
     private String password;
 
     public User() {
@@ -11,7 +11,7 @@ public class User {
 
     public User(String name, String MSSV, String password) {
         this.name = name;
-        this.mssv = MSSV;
+        this.MSSV = MSSV;
         this.password = password;
     }
 
@@ -20,7 +20,7 @@ public class User {
     }
 
     public String getMssv() {
-        return mssv;
+        return MSSV;
     }
 
     public String getPassword() {
