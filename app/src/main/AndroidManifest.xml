@@ -41,6 +41,10 @@
             android:name=".Activity.setting_logout">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+        <activity
+            android:name=".Activity.Subject">
+            <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
+        </activity>
     </application>
 
 </manifest>
