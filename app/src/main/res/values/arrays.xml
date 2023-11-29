@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="year_array">
+        <item>2022</item>
+        <item>2023</item>
+        <!-- Các năm khác -->
+    </string-array>
+</resources>
