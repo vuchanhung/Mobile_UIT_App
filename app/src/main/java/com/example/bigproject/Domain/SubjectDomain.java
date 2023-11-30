@@ -3,14 +3,16 @@ package com.example.bigproject.Domain;
 public class SubjectDomain {
     private String courseName;
     private String lecturer;
-    private String year;
+    private String semester;
     // Các thông tin khác tương ứng với giao diện của bạn
 
-    public SubjectDomain(String courseName, String lecturer, String year) {
+    public SubjectDomain(String semester, String courseName, String lecturer) {
+        this.semester = semester;
         this.courseName = courseName;
         this.lecturer = lecturer;
-        this.year = year;
     }
+
+
 
     public String getCourseName() {
         return courseName;
@@ -28,12 +30,12 @@ public class SubjectDomain {
         this.lecturer = lecturer;
     }
 
-    public String getYear() {
-        return year;
+    public String getSemester() {
+        return semester;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
     // Getters and setters cho các thông tin khác nếu có
 }
