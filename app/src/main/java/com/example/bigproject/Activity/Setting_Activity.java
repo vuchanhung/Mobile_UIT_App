@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -75,7 +76,25 @@ public class Setting_Activity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+
         });
+        
+        //NavigationBottom
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnav);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.individual_button) {
+                // Xử lý khi mục "individual_button" được chọn
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            }
+            //Thêm các điều kiện khác nếu cần
+            return false;
+        });
+
+
     }
 
     private void initializeViews() {
