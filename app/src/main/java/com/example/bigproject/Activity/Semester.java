@@ -1,6 +1,9 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +39,33 @@ public class Semester extends AppCompatActivity {
 
         // Hiển thị thông tin chung về học kỳ, lớp học, điểm trung bình, vv...
         displayGeneralInformation();
+
+        //Navigation
+        LinearLayout profileBtn;
+
+        profileBtn = findViewById(R.id.profileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Semester.this, com.example.bigproject.Activity.Setting_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
+
+        LinearLayout courseBtn;
+
+        courseBtn = findViewById(R.id.courseBtn);
+        courseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Semester.this, com.example.bigproject.Activity.Subject.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
     }
 
     // Tạo dữ liệu mẫu
