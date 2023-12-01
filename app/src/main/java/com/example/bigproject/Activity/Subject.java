@@ -1,82 +1,119 @@
 package com.example.bigproject.Activity;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.PopupMenu;
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bigproject.Adapter.SubjectAdapter;
-import com.example.bigproject.Domain.SubjectDomain;
 import com.example.bigproject.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Subject extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private SubjectAdapter adapter;
-    private List<String> filterOptions = new ArrayList<>();
+    ArrayList<String> classArrayList;  // Change the type to ArrayList<String>
 
-    private List<SubjectDomain> subjectList = new ArrayList<SubjectDomain>(); // Khởi tạo danh sách môn học
+    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subject_main);
 
+        SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String mssv = preferences.getString("mssv", "");
+
         recyclerView = findViewById(R.id.recyclerView);
         Button filterButton = findViewById(R.id.filterButton);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
-        // Add filter options
-        filterOptions.add("Option 1");
-        filterOptions.add("Option 2");
-        filterOptions.add("Option 3");
-        // ...
+        db = FirebaseFirestore.getInstance();
+        classArrayList = new ArrayList<>();  // Change the type to ArrayList<String>
+        adapter = new SubjectAdapter(Subject.this, classArrayList);
 
-        subjectList.add(new SubjectDomain("Học kỳ 1 - 2023", "Phát triển ứng dụng trên thiết bị di động", "Phan Xuân Thiện"));
+        recyclerView.setAdapter(adapter);  // Set the adapter to the RecyclerView
 
-// ... (Thêm các môn học khác nếu cần)
-        SubjectAdapter adapter = new SubjectAdapter(subjectList, this);
-
-        // Initialize RecyclerView
-        adapter = new SubjectAdapter(subjectList, this);
-        recyclerView.setAdapter(adapter);
-
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showFilterOptions(view);
-            }
-        });
+        EventChangeListener(mssv);
     }
 
-    public void showFilterOptions(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        for (String option : filterOptions) {
-            popupMenu.getMenu().add(option);
-        }
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                String selectedOption = menuItem.getTitle().toString();
-                handleFilterSelection(selectedOption);
-                return true;
-            }
-        });
-        popupMenu.show();
+    private void EventChangeListener(String mssv) {
+        db.collection("User")
+                .document(mssv)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // Get the enrolledClass array from the User document
+                                Object enrolledClassesObj = document.get("enrolledClass");
+
+                                if (enrolledClassesObj instanceof ArrayList) {
+                                    ArrayList<?> enrolledClassIds = (ArrayList<?>) enrolledClassesObj;
+
+                                    // Log the contents of enrolledClass
+                                    Log.d(TAG, "Enrolled Class Ids: " + enrolledClassIds.toString());
+
+                                    // Assuming enrolledClassIds contains strings (ids)
+                                    for (Object enrolledClassId : enrolledClassIds) {
+                                        if (enrolledClassId instanceof String) {
+                                            String classId = (String) enrolledClassId;
+
+                                            // Query the "Class" document using the classId
+                                            db.collection("Class")
+                                                    .document(classId)
+                                                    .get()
+                                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                            if (task.isSuccessful()) {
+                                                                DocumentSnapshot classDocument = task.getResult();
+                                                                if (classDocument.exists()) {
+                                                                    // Get the 'name' field from the Class document
+                                                                    String className = classDocument.getString("name");
+
+                                                                    // Log or process className as needed
+                                                                    Log.d(TAG, "Class Name: " + className);
+
+                                                                    // Add className to the adapter's data
+                                                                    classArrayList.add(className);
+
+                                                                    // Notify the adapter that the data set has changed
+                                                                    adapter.notifyDataSetChanged();
+                                                                }
+                                                            } else {
+                                                                // Handle errors in querying the Class document
+                                                                Log.d(TAG, "Error getting Class document: ", task.getException());
+                                                            }
+                                                        }
+                                                    });
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            // Handle errors here
+                            Log.d(TAG, "Error getting User document: ", task.getException());
+                        }
+                    }
+                });
     }
 
-    private void handleFilterSelection(String selectedOption) {
-        // Handle filtering based on the selected option
-        // Update your RecyclerView data accordingly
-    }
-
-    // Your RecyclerView Adapter class (YourAdapter) should be defined here or imported.
-    // Make sure to pass data to the adapter as needed.
 }
+
