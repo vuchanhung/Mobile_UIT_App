@@ -34,8 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:text="PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - NT118.011.MMCL (*)"
                 android:textColor="@color/white"
                 android:textSize="15dp"
@@ -46,11 +44,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Lecturer: Phan Xuân Thiện"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textColor="@color/primary_color"
+                android:text="Bài Thực Hành 1"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +80,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="90dp"
                     android:layout_weight="1"
-                    android:text="Chi Tiết" />
+                    android:text="NỘP BÀI"
+                    android:backgroundTint="@color/red"/>
 
                 <Button
                     android:id="@+id/button5"
@@ -74,8 +90,8 @@
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:text="Group Chat"
-                    android:textColor="@color/primary_color"
-                    android:backgroundTint="@color/white"/>
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/primary_color"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
