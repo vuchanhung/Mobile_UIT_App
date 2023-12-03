@@ -80,7 +80,7 @@ public class Setting_Activity extends AppCompatActivity {
         });
         
         //NavigationBottom
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnav);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.app_bar);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.individual_button) {
