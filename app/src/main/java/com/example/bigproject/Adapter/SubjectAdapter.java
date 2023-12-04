@@ -1,23 +1,30 @@
 package com.example.bigproject.Adapter;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bigproject.Activity.Chat;
+import com.example.bigproject.Model.myClass;
 import com.example.bigproject.R;
 
 import java.util.ArrayList;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder> {
     Context context;
-    ArrayList<String> classArrayList;  // Change the type to ArrayList<String>
+    ArrayList<myClass> classArrayList;  // Change the type to ArrayList<myClass>
 
-    public SubjectAdapter(Context context, ArrayList<String> classArrayList){
+    public SubjectAdapter(Context context, ArrayList<myClass> classArrayList){
         this.context = context;
         this.classArrayList = classArrayList;
     }
@@ -31,12 +38,27 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     @Override
     public void onBindViewHolder(@NonNull SubjectAdapter.SubjectViewHolder holder, int position) {
-        String className = classArrayList.get(position);
+        myClass enrolledClass = classArrayList.get(position);
 
-        // Set the class name for the TextView in the ViewHolder
-        holder.nameClass.setText(className);
+        // Log the class name and teacher
+        Log.d(TAG, "Chat value from model: " + enrolledClass.getChat());
+
+
+        // Set the class name and teacher for the TextViews in the ViewHolder
+        holder.nameClass.setText(enrolledClass.getName());
+        holder.nameTeacher.setText(enrolledClass.getTeacher());
+        holder.buttonChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle button click, you can start a new activity or do something else
+                // For example, you can start a new activity:
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, Chat.class);
+                intent.putExtra("idGroupchat", enrolledClass.getChat());
+                context.startActivity(intent);
+            }
+        });
     }
-
     @Override
     public int getItemCount() {
         return classArrayList.size();
@@ -44,11 +66,14 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     public static class SubjectViewHolder extends RecyclerView.ViewHolder {
         TextView nameClass;
+        TextView nameTeacher;
 
+        Button buttonChat;
         public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
             nameClass = itemView.findViewById(R.id.textView19);
+            nameTeacher = itemView.findViewById(R.id.textView20);
+            buttonChat = itemView.findViewById(R.id.chat);
         }
     }
 }
-
