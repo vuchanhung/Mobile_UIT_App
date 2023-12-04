@@ -3,6 +3,7 @@ package com.example.bigproject.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -66,8 +67,22 @@ public class Semester extends AppCompatActivity {
             }
 
         });
-    }
+        //Nút back
+        ImageView backButton = findViewById(R.id.imageView7);
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Xử lý sự kiện khi ImageView được nhấn
+                back();
+            }
+        });
+    }
+    public void back() {
+        // Xử lý khi nút back được nhấn
+        // Ví dụ: quay lại trang trước đó
+        startActivity(new Intent(Semester.this, Setting_Activity.class));
+    }
     // Tạo dữ liệu mẫu
     private void createSampleData() {
         semesterList = new ArrayList<>();
