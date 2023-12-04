@@ -6,35 +6,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Học kì 1 - 2023"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/primary_color"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="190dp"
             android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/gradient">
+            android:background="@drawable/gradient"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:text="PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - NT118.011.MMCL (*)"
                 android:textColor="@color/white"
@@ -45,12 +38,12 @@
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Lecturer: Phan Xuân Thiện"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:text="Lecturer: Phan Xuân Thiện"
                 android:textColor="@color/primary_color"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,9 +66,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/white"
                     android:text="Group Chat"
-                    android:textColor="@color/primary_color"
-                    android:backgroundTint="@color/white"/>
+                    android:textColor="@color/primary_color" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
