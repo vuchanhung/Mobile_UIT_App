@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -78,20 +78,32 @@ public class Setting_Activity extends AppCompatActivity {
             }
 
         });
-        
-        //NavigationBottom
-        BottomNavigationView bottomNavigationView = findViewById(R.id.app_bar);
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.individual_button) {
-                // Xử lý khi mục "individual_button" được chọn
+        //Navigation
+        LinearLayout profileBtn;
+
+        profileBtn = findViewById(R.id.profileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
                 startActivity(intent);
                 finish();
-                return true;
             }
-            //Thêm các điều kiện khác nếu cần
-            return false;
+
+        });
+
+        LinearLayout courseBtn;
+
+        courseBtn = findViewById(R.id.courseBtn);
+        courseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
+                startActivity(intent);
+                finish();
+            }
+
         });
 
 

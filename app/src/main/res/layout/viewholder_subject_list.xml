@@ -64,7 +64,7 @@
                     android:text="Chi Tiết" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/chat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
