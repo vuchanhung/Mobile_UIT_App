@@ -1,10 +1,7 @@
 package com.example.bigproject.Adapter;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bigproject.Activity.Chat;
+import com.example.bigproject.Activity.SubjectDetail;
 import com.example.bigproject.Model.myClass;
 import com.example.bigproject.R;
 
@@ -41,7 +39,6 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         myClass enrolledClass = classArrayList.get(position);
 
         // Log the class name and teacher
-        Log.d(TAG, "Chat value from model: " + enrolledClass.getChat());
 
 
         // Set the class name and teacher for the TextViews in the ViewHolder
@@ -58,6 +55,17 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
                 context.startActivity(intent);
             }
         });
+        holder.btnDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle button click, you can start a new activity or do something else
+                // For example, you can start a new activity:
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, SubjectDetail.class);
+                intent.putExtra("idGroupchat", enrolledClass.getChat());
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {
@@ -68,12 +76,14 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         TextView nameClass;
         TextView nameTeacher;
 
+        Button btnDetail;
         Button buttonChat;
         public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
             nameClass = itemView.findViewById(R.id.textView19);
             nameTeacher = itemView.findViewById(R.id.textView20);
             buttonChat = itemView.findViewById(R.id.chat);
+            btnDetail = itemView.findViewById(R.id.button4);
         }
     }
 }
