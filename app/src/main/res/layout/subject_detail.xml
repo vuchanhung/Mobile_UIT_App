@@ -97,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
             android:text="PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - NT118.011.MMCL (*)"
             android:textColor="@color/primary_color"
             android:textSize="20dp"
@@ -117,6 +118,7 @@
                 android:layout_weight="1"
                 android:text="TC"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color"
                 android:layout_marginRight="20dp"/>
 
@@ -127,6 +129,7 @@
                 android:layout_weight="1"
                 android:text="QT"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color"
                 android:layout_marginRight="20dp"/>
 
@@ -137,6 +140,7 @@
                 android:layout_weight="1"
                 android:text="TH"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color"
                 android:layout_marginRight="20dp"/>
 
@@ -147,6 +151,7 @@
                 android:layout_weight="1"
                 android:text="GK"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color"
                 android:layout_marginRight="20dp"/>
 
@@ -157,6 +162,7 @@
                 android:layout_weight="1"
                 android:text="CK"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color"
                 android:layout_marginRight="20dp"/>
 
@@ -167,6 +173,7 @@
                 android:layout_weight="1"
                 android:text="TB"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="@color/primary_color" />
         </LinearLayout>
 
@@ -183,9 +190,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TC"
+                android:text="04"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"/>
 
             <TextView
@@ -193,9 +200,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="QT"
+                android:text="10"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"/>
 
             <TextView
@@ -203,9 +210,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TH"
+                android:text="10"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"/>
 
             <TextView
@@ -213,9 +220,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="GK"
+                android:text="10"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"/>
 
             <TextView
@@ -223,9 +230,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="CK"
+                android:text="10"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"/>
 
             <TextView
@@ -233,10 +240,95 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TB"
+                android:text="10"
                 android:textSize="18dp"
-                android:textColor="@color/primary_color" />
+                android:textColor="@color/black" />
         </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/xam"
+            android:layout_marginTop="12dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="331dp"
+                        android:src="@drawable/person"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="THÀNH VIÊN"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.124"
+                        app:layout_constraintStart_toEndOf="@+id/imageView14"
+                        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="331dp"
+                        android:src="@drawable/notifications_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="THÔNG BÁO"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.124"
+                        app:layout_constraintStart_toEndOf="@+id/imageView15"
+                        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/practice_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
