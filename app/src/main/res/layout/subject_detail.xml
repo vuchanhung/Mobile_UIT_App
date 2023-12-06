@@ -188,15 +188,15 @@
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:text="04"
-                android:textSize="18dp"
                 android:textColor="@color/black"
-                android:layout_marginRight="20dp"/>
+                android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textViewQT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -206,7 +206,7 @@
                 android:layout_marginRight="20dp"/>
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/textViewTH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -216,7 +216,7 @@
                 android:layout_marginRight="20dp"/>
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/textViewGK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -226,7 +226,7 @@
                 android:layout_marginRight="20dp"/>
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/textViewCK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -236,7 +236,7 @@
                 android:layout_marginRight="20dp"/>
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/textViewTB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
