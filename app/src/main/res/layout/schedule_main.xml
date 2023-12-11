@@ -185,7 +185,8 @@
                 android:text="CN"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:textColor="@color/primary_color" />
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -263,24 +264,24 @@
                 android:text="10"
                 android:textSize="18dp"
                 android:textColor="@color/black" />
+
         </LinearLayout>
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/schedule_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="333dp"
-            android:layout_marginTop="16dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/schedule_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </ScrollView>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
 
         <Button
             android:id="@+id/button7"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:text="Button" />
+            android:layout_marginBottom="60dp"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/app_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </LinearLayout>
