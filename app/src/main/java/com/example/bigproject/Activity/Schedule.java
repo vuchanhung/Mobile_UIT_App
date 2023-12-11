@@ -23,7 +23,6 @@ public class Schedule extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedule_main);
 
-        // Khởi tạo dữ liệu mẫu
         scheduleItems = new ArrayList<>();
         scheduleItems.add(new ScheduleDomain("ECxxx.xxx.TMCL", "Thứ 4, tiết 6-9, P.B310", "Số Buổi Diễn Ra", "Trần Văn Hải Triều"));
 
