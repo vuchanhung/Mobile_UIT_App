@@ -44,7 +44,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MÔN HỌC"
+                android:text="THỜI KHÓA BIỂU"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -83,15 +83,207 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="573dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/bar"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="641dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="THÁNG 11"
+            android:textAlignment="center"
+            android:textColor="@color/primary_color"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:textAlignment="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T2"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T3"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T4"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T5"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T6"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="T7"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CN"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:textAlignment="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="04"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textViewQT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewTH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewGK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewCK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewTB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="333dp"
+            android:layout_marginTop="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/schedule_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Button" />
+
+
+    </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bar"
@@ -225,14 +417,13 @@
                         android:layout_marginTop="8dp"
                         android:src="@drawable/individual_bottom_btn" />
 
-
                     <TextView
                         android:id="@+id/individual_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cá nhân"
                         android:textAlignment="center"
-                        android:textColor="@color/xam" />
+                        android:textColor="@color/primary_color" />
 
                 </LinearLayout>
 
@@ -240,6 +431,4 @@
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

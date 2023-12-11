@@ -54,7 +54,6 @@
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginTop="96dp"
-
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -195,8 +194,8 @@
 
                 <TextView
                     android:id="@+id/mail_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="236dp"
+                    android:layout_height="25dp"
                     android:layout_marginStart="16dp"
                     android:text="20520948@gm.uit.edu.vn"
                     android:textColor="@color/primary_color"
@@ -503,18 +502,5 @@
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomnav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/scrollView2"-->
-<!--        app:menu="@menu/footer_layout"-->
-<!--        tools:layout_editor_absoluteX="0dp">-->
-
-<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
