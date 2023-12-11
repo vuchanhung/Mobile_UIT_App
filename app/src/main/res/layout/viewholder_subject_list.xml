@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:background="@drawable/gradient"
             android:orientation="vertical">
 
@@ -62,7 +62,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="90dp"
                     android:layout_weight="1"
-                    android:text="Chi Tiết" />
+                    android:text="Chi Tiết"
+                    android:stateListAnimator="@animator/button_state_list_animator"/>
 
                 <Button
                     android:id="@+id/chat"
@@ -72,7 +73,9 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
                     android:text="Group Chat"
-                    android:textColor="@color/primary_color" />
+                    android:textColor="@color/primary_color"
+                    android:stateListAnimator="@animator/button_state_list_animator"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
