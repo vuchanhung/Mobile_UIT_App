@@ -53,6 +53,10 @@
             android:name=".Activity.SubjectDetail">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+        <activity
+            android:name=".Activity.Schedule">
+            <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
+        </activity>
     </application>
 
 </manifest>
