@@ -4,8 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 public class Chat extends AppCompatActivity {
     private RecyclerView recyclerViewChat;
     private EditText editTextMessage;
-    private Button buttonSendMessage;
+    private ImageButton buttonSendMessage;
     private ChatAdapter chatAdapter;
     private FirebaseFirestore db;
     private CollectionReference messagesCollection;
