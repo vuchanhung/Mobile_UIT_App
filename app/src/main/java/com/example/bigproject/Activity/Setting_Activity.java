@@ -109,15 +109,15 @@ public class Setting_Activity extends AppCompatActivity {
         LinearLayout tkbBtn;
 
         tkbBtn = findViewById(R.id.tkbBtn);
-//        tkbBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
-//                startActivity(intent);
-//                finish();
-//            }
+        tkbBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
+                startActivity(intent);
+                finish();
+            }
 
-//        });
+        });
 
 
     }
