@@ -4,28 +4,26 @@ import static com.example.bigproject.Utils.ScheduleUtils.daysInWeekArray;
 import static com.example.bigproject.Utils.ScheduleUtils.monthYearFromDate;
 
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bigproject.Adapter.EventAdapter;
 import com.example.bigproject.Adapter.ScheduleAdapter;
-import com.example.bigproject.Model.Event;
+import com.example.bigproject.Model.User;
+import com.example.bigproject.Model.myClass;
 import com.example.bigproject.R;
 import com.example.bigproject.Utils.ScheduleUtils;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.firebase.client.DataSnapshot;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -34,7 +32,15 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-    private ListView eventListView;
+
+    private RecyclerView recyclerView;
+    private EventAdapter eventAdapter;
+    ArrayList<myClass> classArrayList;  // Change the type to ArrayList<Class>
+
+    FirebaseFirestore db;
+
+    SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+    String mssv = preferences.getString("mssv", "");
 
 
 
@@ -49,7 +55,6 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
-        eventListView = findViewById(R.id.eventListView);
 
     }
 
@@ -63,7 +68,6 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
             RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
             calendarRecyclerView.setLayoutManager(layoutManager);
             calendarRecyclerView.setAdapter(calendarAdapter);
-            setEventAdpater();
         }
 
     }
@@ -94,15 +98,63 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
 
     private void setEventAdpater()
     {
-        ArrayList<Event> dailyEvents = Event.eventsForDate(ScheduleUtils.selectedDate);
-        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
-        eventListView.setAdapter(eventAdapter);
+        db = FirebaseFirestore.getInstance();
+        classArrayList = new ArrayList<>();  // Change the type to ArrayList<Class>
+        eventAdapter = new EventAdapter(Schedule.this, classArrayList);
+
+        recyclerView.setAdapter(eventAdapter);  // Set the adapter to the RecyclerView
+
+        EventChangeListener(mssv);
+    }
+    private void EventChangeListener(String mssv) {
+        db.collection("User")
+                .document(mssv)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // Lấy thông tin từ Firestore và chuyển thành đối tượng User
+                                User user = document.toObject(User.class);
+
+                                myClass MyClass = document.toObject(myClass.class);
+
+                                if (user != null && user.getEnrolledClass() != null && !user.getEnrolledClass().isEmpty()) {
+                                    // Duyệt qua danh sách ID lớp học và truy vấn thông tin từ bảng Class
+                                    for (String classId : user.getEnrolledClass()) {
+//                                        for(String date)
+                                        // Log ID lớp học
+                                        db.collection("Class")
+                                                .document(classId)
+                                                .get()
+                                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                        if (task.isSuccessful()) {
+                                                            DocumentSnapshot classDocument = task.getResult();
+                                                            if (classDocument.exists()) {
+                                                                // Lấy thông tin lớp học từ Firestore và chuyển thành đối tượng Class
+                                                                myClass enrolledClass = classDocument.toObject(myClass.class);
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                });
     }
 
-    public void newEventAction(View view)
-    {
-        startActivity(new Intent(this, EventEditActivity.class));
-    }
+
+
+
+
+
 
 
 

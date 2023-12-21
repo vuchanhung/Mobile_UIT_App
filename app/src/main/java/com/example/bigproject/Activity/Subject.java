@@ -49,7 +49,6 @@
             String mssv = preferences.getString("mssv", "");
 
             recyclerView = findViewById(R.id.recyclerView);
-            Button filterButton = findViewById(R.id.filterButton);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
 
