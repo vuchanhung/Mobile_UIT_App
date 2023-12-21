@@ -7,7 +7,6 @@
     import android.os.Bundle;
     import android.util.Log;
     import android.view.View;
-    import android.widget.Button;
     import android.widget.LinearLayout;
 
     import androidx.annotation.NonNull;
@@ -47,7 +46,7 @@
             String mssv = preferences.getString("mssv", "");
 
             recyclerView = findViewById(R.id.recyclerView);
-            Button filterButton = findViewById(R.id.filterButton);
+//            Button filterButton = findViewById(R.id.filterButton);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
 
