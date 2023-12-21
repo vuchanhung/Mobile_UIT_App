@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bigproject.Adapter.ScheduleAdapter;
 import com.example.bigproject.R;
+
+
 import androidx.annotation.NonNull;
 
 import java.time.LocalDate;
@@ -17,6 +19,7 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.
     public final View parentView;
     public final TextView dayOfMonth;
     private final ScheduleAdapter.OnItemListener onItemListener;
+
     public ScheduleViewHolder(@NonNull View itemView, ScheduleAdapter.OnItemListener onItemListener, ArrayList<LocalDate> days)
     {
         super(itemView);
@@ -38,5 +41,7 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.
             }
         }
     }
+
+
 }
 
