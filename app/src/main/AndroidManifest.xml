@@ -57,9 +57,11 @@
             android:name=".Activity.Schedule">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
-        <activity android:name=".Activity.EventEditActivity">
-
+        <activity
+            android:name=".Activity.Diemdanh">
+            <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+
     </application>
 
 </manifest>
