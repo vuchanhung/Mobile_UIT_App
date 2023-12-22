@@ -57,9 +57,6 @@
             android:name=".Activity.Schedule">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
-        <activity android:name=".Activity.EventEditActivity">
-
-        </activity>
     </application>
 
 </manifest>
