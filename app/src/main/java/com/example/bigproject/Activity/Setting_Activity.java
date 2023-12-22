@@ -119,6 +119,19 @@ public class Setting_Activity extends AppCompatActivity {
 
         });
 
+        LinearLayout diemdanhbtn;
+
+        diemdanhbtn = findViewById(R.id.diemdanh);
+        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
+
 
     }
 
