@@ -6,21 +6,20 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/settingContent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/bar"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout">
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/bar"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -356,154 +355,169 @@
 
     </ScrollView>
     </LinearLayout>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/bar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomLayout"
+        app:layout_constraintTop_toBottomOf="@+id/settingContent"
+        >
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            app:backgroundTint="@color/white"
-            app:layout_insetEdge="bottom">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/home"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/home_button"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/home_bottom_btn" />
-
-                    <TextView
-                        android:id="@+id/home_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Trang chủ"
-                        android:textAlignment="center"
-                        android:textColor="@color/xam" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tkbBtn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/tkb_button"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/tkb_bottom_btn" />
-
-                    <TextView
-                        android:id="@+id/tkb_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TKB"
-                        android:textAlignment="center"
-                        android:textColor="@color/xam" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/diemdanh"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/qr_button"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/qr_bottom_btn" />
-
-                    <TextView
-                        android:id="@+id/qr_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Điểm danh"
-                        android:textAlignment="center"
-                        android:textColor="@color/xam" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/courseBtn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/subject_button"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/subject_bottom_btn" />
-
-                    <TextView
-                        android:id="@+id/subject_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Môn học"
-                        android:textAlignment="center"
-                        android:textColor="@color/xam" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/profileBtn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/individual_button"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/individual_bottom_btn" />
-
-                    <TextView
-                        android:id="@+id/individual_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cá nhân"
-                        android:textAlignment="center"
-                        android:textColor="@color/primary_color" />
-
-                </LinearLayout>
-
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            app:menu="@menu/footer_layout"
+            android:id="@+id/bottomnav"
+            >
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:id="@+id/bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/app_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            app:backgroundTint="@color/white"-->
+<!--            app:layout_insetEdge="bottom">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/home_button"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/home_bottom_btn" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/home_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Trang chủ"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/xam" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/tkbBtn"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/tkb_button"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/tkb_bottom_btn" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tkb_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="TKB"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/xam" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/diemdanh"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/qr_button"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/qr_bottom_btn" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/qr_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Điểm danh"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/xam" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/courseBtn"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/subject_button"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/subject_bottom_btn" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Môn học"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/xam" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/profileBtn"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/individual_button"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/individual_bottom_btn" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/individual_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Cá nhân"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/primary_color" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
