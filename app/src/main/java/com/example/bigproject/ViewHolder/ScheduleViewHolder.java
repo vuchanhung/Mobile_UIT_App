@@ -20,6 +20,9 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.
     public final TextView dayOfMonth;
     private final ScheduleAdapter.OnItemListener onItemListener;
 
+
+
+
     public ScheduleViewHolder(@NonNull View itemView, ScheduleAdapter.OnItemListener onItemListener, ArrayList<LocalDate> days)
     {
         super(itemView);
@@ -41,6 +44,7 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.
             }
         }
     }
+
 
 
 }

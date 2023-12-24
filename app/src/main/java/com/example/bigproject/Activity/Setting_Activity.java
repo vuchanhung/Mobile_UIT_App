@@ -80,57 +80,57 @@ public class Setting_Activity extends AppCompatActivity {
         });
 
         //Navigation
-        LinearLayout profileBtn;
-
-        profileBtn = findViewById(R.id.profileBtn);
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
-
-        LinearLayout courseBtn;
-
-        courseBtn = findViewById(R.id.courseBtn);
-        courseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
+//        LinearLayout profileBtn;
+//
+//        profileBtn = findViewById(R.id.profileBtn);
+//        profileBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//        });
+//
+//        LinearLayout courseBtn;
+//
+//        courseBtn = findViewById(R.id.courseBtn);
+//        courseBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//        });
 
         LinearLayout tkbBtn;
 
-        tkbBtn = findViewById(R.id.tkbBtn);
-        tkbBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
-                startActivity(intent);
-                finish();
-            }
+//        tkbBtn = findViewById(R.id.tkbBtn);
+//        tkbBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//        });
 
-        });
-
-        LinearLayout diemdanhbtn;
-
-        diemdanhbtn = findViewById(R.id.diemdanh);
-        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
+//        LinearLayout diemdanhbtn;
+//
+//        diemdanhbtn = findViewById(R.id.diemdanh);
+//        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//        });
 
 
     }
