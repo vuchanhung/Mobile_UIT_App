@@ -79,7 +79,7 @@ public class Setting_Activity extends AppCompatActivity {
 
         });
 
-        //Navigation
+        //Navigation---------------------------------------------------------------------------------------------------------------------
         LinearLayout profileBtn;
 
         profileBtn = findViewById(R.id.profileBtn);
@@ -132,6 +132,19 @@ public class Setting_Activity extends AppCompatActivity {
 
         });
 
+        LinearLayout homeBtn;
+
+        homeBtn = findViewById(R.id.home);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Home.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
+        //------------------------------------------------------------------------------------------------------------------------------
 
     }
 

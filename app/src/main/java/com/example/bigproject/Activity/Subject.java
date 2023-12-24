@@ -113,67 +113,75 @@
                                                                 DocumentSnapshot classDocument = task.getResult();
                                                                 if (classDocument.exists()) {
                                                                     // Lấy thông tin lớp học từ Firestore và chuyển thành đối tượng Class
-                                                                    myClass enrolledClass = classDocument.toObject(myClass.class);
-                                                                    // Kiểm tra xem trường 'chat' có giá trị không
-                                                                    if (enrolledClass != null && enrolledClass.getChat() == null) {
-                                                                        // Nếu không có giá trị, thêm giá trị bằng với classID
-                                                                        db.collection("Class")
-                                                                                .document(classId)
-                                                                                .update("chat", classId)
-                                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                                    @Override
-                                                                                    public void onSuccess(Void aVoid) {
-                                                                                        Log.d(TAG, "Chat value updated successfully.");
-                                                                                        // Thêm vào danh sách và cập nhật RecyclerView
-                                                                                        classArrayList.add(enrolledClass);
-                                                                                        Collections.sort(classArrayList, new Comparator<myClass>() {
+                                                                    if (classDocument.exists()) {
+                                                                        myClass enrolledClass = classDocument.toObject(myClass.class);
+                                                                        if (enrolledClass != null) {
+                                                                            // Kiểm tra xem trường 'chat' có giá trị không
+                                                                            if (enrolledClass.getChat() == null) {
+                                                                                // Nếu không có giá trị, thêm giá trị bằng với classID
+                                                                                db.collection("Class")
+                                                                                        .document(classId)
+                                                                                        .update("chat", classId)
+                                                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                                             @Override
-                                                                                            public int compare(myClass class1, myClass class2) {
-                                                                                                // So sánh năm giảm dần
-                                                                                                int yearCompare = Integer.compare(class2.getYear(), class1.getYear());
+                                                                                            public void onSuccess(Void aVoid) {
+                                                                                                Log.d(TAG, "Chat value updated successfully.");
+                                                                                                // Thêm vào danh sách và cập nhật RecyclerView
+                                                                                                classArrayList.add(enrolledClass);
+                                                                                                Collections.sort(classArrayList, new Comparator<myClass>() {
+                                                                                                    @Override
+                                                                                                    public int compare(myClass class1, myClass class2) {
+                                                                                                        // So sánh năm giảm dần
+                                                                                                        int yearCompare = Integer.compare(class2.getYear(), class1.getYear());
 
-                                                                                                // Nếu năm giống nhau, so sánh học kì (semester) theo thứ tự
-                                                                                                if (yearCompare == 0) {
-                                                                                                    return class2.getSemester().compareTo(class1.getSemester());
-                                                                                                }
+                                                                                                        // Nếu năm giống nhau, so sánh học kì (semester) theo thứ tự
+                                                                                                        if (yearCompare == 0) {
+                                                                                                            return class2.getSemester().compareTo(class1.getSemester());
+                                                                                                        }
 
-                                                                                                return yearCompare;
+                                                                                                        return yearCompare;
+                                                                                                    }
+                                                                                                });
+                                                                                                adapter.notifyDataSetChanged();
+                                                                                            }
+                                                                                        })
+                                                                                        .addOnFailureListener(new OnFailureListener() {
+                                                                                            @Override
+                                                                                            public void onFailure(@NonNull Exception e) {
+                                                                                                Log.e(TAG, "Error updating chat value.", e);
                                                                                             }
                                                                                         });
-                                                                                        adapter.notifyDataSetChanged();
-                                                                                    }
-                                                                                })
-                                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                            } else {
+                                                                                // Trường 'chat' đã có giá trị, không cần thêm
+                                                                                // Thêm vào danh sách và cập nhật RecyclerView
+                                                                                enrolledClass.toString();
+                                                                                classArrayList.add(enrolledClass);
+                                                                                Collections.sort(classArrayList, new Comparator<myClass>() {
                                                                                     @Override
-                                                                                    public void onFailure(@NonNull Exception e) {
-                                                                                        Log.e(TAG, "Error updating chat value.", e);
+                                                                                    public int compare(myClass class1, myClass class2) {
+                                                                                        // So sánh năm giảm dần
+                                                                                        int yearCompare = Integer.compare(class2.getYear(), class1.getYear());
+
+                                                                                        // Nếu năm giống nhau, so sánh học kì (semester) theo thứ tự
+                                                                                        if (yearCompare == 0) {
+                                                                                            return class2.getSemester().compareTo(class1.getSemester());
+                                                                                        }
+
+                                                                                        return yearCompare;
                                                                                     }
                                                                                 });
-                                                                    } else {
-                                                                        // Trường 'chat' đã có giá trị, không cần thêm
-                                                                        // Thêm vào danh sách và cập nhật RecyclerView
-                                                                        enrolledClass.toString();
-                                                                        classArrayList.add(enrolledClass);
-                                                                        Collections.sort(classArrayList, new Comparator<myClass>() {
-                                                                            @Override
-                                                                            public int compare(myClass class1, myClass class2) {
-                                                                                // So sánh năm giảm dần
-                                                                                int yearCompare = Integer.compare(class2.getYear(), class1.getYear());
-
-                                                                                // Nếu năm giống nhau, so sánh học kì (semester) theo thứ tự
-                                                                                if (yearCompare == 0) {
-                                                                                    return class2.getSemester().compareTo(class1.getSemester());
-                                                                                }
-
-                                                                                return yearCompare;
+                                                                                adapter.notifyDataSetChanged();
                                                                             }
-                                                                        });
-                                                                        adapter.notifyDataSetChanged();
+                                                                        } else {
+                                                                            Log.e(TAG, "Error converting DocumentSnapshot to myClass: enrolledClass is null");
+                                                                        }
+                                                                    } else {
+                                                                        Log.e(TAG, "Error converting DocumentSnapshot to myClass: DocumentSnapshot does not exist");
                                                                     }
                                                                 }
                                                             } else {
                                                                 // Xử lý lỗi khi truy vấn thông tin lớp học
-                                                                Log.d(TAG, "Error getting Class document: ", task.getException());
+                                                                Log.e(TAG, "Error getting Class document: ", task.getException());
                                                             }
                                                         }
                                                     });
@@ -182,7 +190,7 @@
                                 }
                             } else {
                                 // Xử lý lỗi khi truy vấn thông tin sinh viên
-                                Log.d(TAG, "Error getting User document: ", task.getException());
+                                Log.e(TAG, "Error getting User document: ", task.getException());
                             }
                         }
                     });
