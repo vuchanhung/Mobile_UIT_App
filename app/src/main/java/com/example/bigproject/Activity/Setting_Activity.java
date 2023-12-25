@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -34,7 +35,7 @@ public class Setting_Activity extends AppCompatActivity {
     private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
-
+//    BottomNavigationView bottomNavigationView;
     private ImageButton semester;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,31 @@ public class Setting_Activity extends AppCompatActivity {
             }
 
         });
+        LinearLayout bottomLayout = findViewById(R.id.bottomLayout);
+        BottomNavigationView bottomNavigationView = bottomLayout.findViewById(R.id.bottomnav);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.nut_home) {
+                // Xử lý khi nhấn vào Trang chủ
+                if (!isMainActivity()) {
+                    openMainActivity();
+                    return true;
+                }
+            } else if (itemId == R.id.TKB) {
+                openmenu();
+                // Xử lý khi nhấn vào Thực đơn
+            } else if (itemId == R.id.qr_button) {
+                // Xử lý khi nhấn vào Giỏ hàng
+                opengiohang();
+            } else if (itemId == R.id.subject_button) {
+                // Xử lý khi nhấn vào Giỏ hàng
+                opendonhang();
+            } else if (itemId == R.id.individual_button) {
+                // Xử lý khi nhấn vào Khác
+                openbagach();
+            }
+            return true;
+        });
 
         //Navigation
 //        LinearLayout profileBtn;
@@ -106,7 +132,7 @@ public class Setting_Activity extends AppCompatActivity {
 //
 //        });
 
-        LinearLayout tkbBtn;
+//        LinearLayout tkbBtn;
 
 //        tkbBtn = findViewById(R.id.tkbBtn);
 //        tkbBtn.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +160,34 @@ public class Setting_Activity extends AppCompatActivity {
 
 
     }
+    private boolean isMainActivity() {
+        // Kiểm tra xem đang ở MainActivity hay không
+        return getClass().getSimpleName().equals(Home.class.getSimpleName());
+    }
+    private void openMainActivity() {
+        // Khởi tạo lại MainActivity
+        Intent intent = new Intent(this, Home.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+    private void openmenu() {
+        Intent intent = new Intent(this, Schedule.class);
+        startActivity(intent);
+    }
+    private void opengiohang() {
+        Intent intent = new Intent(this, Diemdanh.class);
+        startActivity(intent);
+    }
+    private void opendonhang() {
+        Intent intent = new Intent(this, Subject.class);
+        startActivity(intent);
+    }
 
+    private void openbagach() {
+        Intent intent = new Intent(this, Setting_Activity.class);
+        startActivity(intent);
+    }
     private void initializeViews() {
         userNameTextView = findViewById(R.id.textView2);
         mssvTextView = findViewById(R.id.textView3);

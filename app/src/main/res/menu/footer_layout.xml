@@ -6,7 +6,7 @@
         android:icon="@drawable/home_bottom_btn"/>
     <item
         android:title="TKB"
-        android:id="@+id/users"
+        android:id="@+id/TKB"
         android:icon="@drawable/tkb_bottom_btn"/>
     <item
         android:title="QR"
