@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bigproject.Adapter.EventAdapter;
 import com.example.bigproject.Adapter.ScheduleAdapter;
 import com.example.bigproject.Model.User;
 import com.example.bigproject.Model.myClass;
@@ -34,13 +33,7 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
     private RecyclerView calendarRecyclerView;
 
     private RecyclerView recyclerView;
-    private EventAdapter eventAdapter;
-    ArrayList<myClass> classArrayList;  // Change the type to ArrayList<Class>
 
-    FirebaseFirestore db;
-
-    SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
-    String mssv = preferences.getString("mssv", "");
 
 
 
@@ -93,62 +86,10 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
     protected void onResume()
     {
         super.onResume();
-        setEventAdpater();
     }
 
-    private void setEventAdpater()
-    {
-        db = FirebaseFirestore.getInstance();
-        classArrayList = new ArrayList<>();  // Change the type to ArrayList<Class>
-        eventAdapter = new EventAdapter(Schedule.this, classArrayList);
 
-        recyclerView.setAdapter(eventAdapter);  // Set the adapter to the RecyclerView
 
-        EventChangeListener(mssv);
-    }
-    private void EventChangeListener(String mssv) {
-        db.collection("User")
-                .document(mssv)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                // Lấy thông tin từ Firestore và chuyển thành đối tượng User
-                                User user = document.toObject(User.class);
-
-                                myClass MyClass = document.toObject(myClass.class);
-
-                                if (user != null && user.getEnrolledClass() != null && !user.getEnrolledClass().isEmpty()) {
-                                    // Duyệt qua danh sách ID lớp học và truy vấn thông tin từ bảng Class
-                                    for (String classId : user.getEnrolledClass()) {
-//                                        for(String date)
-                                        // Log ID lớp học
-                                        db.collection("Class")
-                                                .document(classId)
-                                                .get()
-                                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                        if (task.isSuccessful()) {
-                                                            DocumentSnapshot classDocument = task.getResult();
-                                                            if (classDocument.exists()) {
-                                                                // Lấy thông tin lớp học từ Firestore và chuyển thành đối tượng Class
-                                                                myClass enrolledClass = classDocument.toObject(myClass.class);
-                                                            }
-                                                        }
-                                                    }
-                                                });
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-                });
-    }
 
 
 

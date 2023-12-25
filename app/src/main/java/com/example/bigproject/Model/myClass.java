@@ -11,20 +11,16 @@ public class myClass {
     private String semester;
 
     private String classNumber;
-    private LocalDate date;
-    private LocalTime time;
     private int year;
 
     public myClass() {}
 
-    public myClass(String chat, String name, String teacher, String semester, String classNumber, LocalDate date, LocalTime time, int year) {
+    public myClass(String chat, String name, String teacher, String semester, String classNumber, int year) {
         this.chat = chat;
         this.name = name;
         this.teacher = teacher;
         this.semester = semester;
         this.classNumber = classNumber;
-        this.date = date;
-        this.time = time;
         this.year = year;
     }
 
@@ -69,19 +65,5 @@ public class myClass {
         this.classNumber = classNumber;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
 }
