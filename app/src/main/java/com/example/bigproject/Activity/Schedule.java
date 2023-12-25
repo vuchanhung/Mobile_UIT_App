@@ -4,25 +4,17 @@ import static com.example.bigproject.Utils.ScheduleUtils.daysInWeekArray;
 import static com.example.bigproject.Utils.ScheduleUtils.monthYearFromDate;
 
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bigproject.Adapter.ScheduleAdapter;
-import com.example.bigproject.Model.User;
-import com.example.bigproject.Model.myClass;
 import com.example.bigproject.R;
 import com.example.bigproject.Utils.ScheduleUtils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -31,11 +23,6 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-
-    private RecyclerView recyclerView;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,26 +68,11 @@ public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnIte
         ScheduleUtils.selectedDate = date;
         setWeekView();
     }
-
     @Override
     protected void onResume()
     {
         super.onResume();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

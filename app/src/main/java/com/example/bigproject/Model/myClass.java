@@ -2,6 +2,7 @@ package com.example.bigproject.Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class myClass {
 
@@ -9,11 +10,13 @@ public class myClass {
     private String name;
     private String teacher;
     private String semester;
-
     private String classNumber;
     private int year;
 
+
+
     public myClass() {}
+
 
     public myClass(String chat, String name, String teacher, String semester, String classNumber, int year) {
         this.chat = chat;
