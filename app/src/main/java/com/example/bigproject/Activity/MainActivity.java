@@ -1,7 +1,11 @@
 package com.example.bigproject.Activity;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,13 +29,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.news_search);
+//        setContentView(R.layout.news_search);
+        Log.d(TAG, "onCreate đã được gọi");
+        SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String mssv = preferences.getString("mssv", "");
 
-        Intent intent = new Intent(this, logo.class);
-        startActivity(intent);
+        if(mssv.isEmpty()){
+            Intent intent = new Intent(this, logo.class);
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(this, Home.class);
+            startActivity(intent);
+        }
 
-        initRecycleView();
-        initRecycleView2();
+
+//        initRecycleView();
+//        initRecycleView2();
     }
 
     private void initRecycleView() {
