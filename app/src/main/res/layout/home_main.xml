@@ -84,6 +84,7 @@
             android:textColor="@color/black"
             android:text="Trường Đại học Công nghệ Thông tin - ĐHQG TP.HCM"/>
         <Button
+            android:id="@+id/xemthem_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Xem thêm"
@@ -366,6 +367,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/footer_layout"
+            app:itemBackground="@color/primary_color"
+            app:itemTextColor="@drawable/select_bottom_item"
+            app:itemIconTint="@drawable/select_bottom_item"
             android:id="@+id/bottomnav"
             >
 
