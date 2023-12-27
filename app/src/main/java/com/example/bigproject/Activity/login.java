@@ -72,7 +72,7 @@ public class login extends AppCompatActivity {
                                         editor.putString("mssv", mssv);
                                         editor.apply();
                                         // Chuyển qua MainActivity
-                                        Intent intent = new Intent(login.this, com.example.bigproject.Activity.Setting_Activity.class);
+                                        Intent intent = new Intent(login.this, com.example.bigproject.Activity.Home.class);
                                         startActivity(intent);
 
                                         // Kết thúc activity hiện tại

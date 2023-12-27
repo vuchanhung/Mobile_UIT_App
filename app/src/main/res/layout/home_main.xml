@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/topNavigationBar"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@color/start_color"
@@ -17,28 +17,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/back_btn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/background_oval"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="37dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/arrow_back_btn"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/titleHomePage"
@@ -49,19 +29,18 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="50dp"
                 android:src="@drawable/notification_btn"
+                android:layout_marginRight="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
-                app:layout_constraintStart_toEndOf="@+id/titleHomePage"
+                app:layout_constraintRight_toLeftOf="@id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -69,301 +48,315 @@
                 android:id="@+id/imageView2"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="33dp"
-                android:layout_marginBottom="30dp"
                 android:src="@drawable/chat_bubble_btn"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
+
+
     <LinearLayout
+        android:id="@+id/homeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:padding="25dp"
+        android:orientation="vertical"
+        android:background="@drawable/background_uit"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topNavigationBar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UIT"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/black"
+            android:text="Trường Đại học Công nghệ Thông tin - ĐHQG TP.HCM"/>
+        <Button
+            android:id="@+id/xemthem_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem thêm"
+            />
+    </LinearLayout>
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintRight_toRightOf="parent">
-        <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/homeImage">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="364dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/firstBar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <!--                <LinearLayout-->
-                    <!--                    android:layout_width="match_parent"-->
-                    <!--                    android:layout_height="match_parent"-->
-                    <!--                    android:orientation="horizontal">-->
+                    <LinearLayout
+                        android:id="@+id/diem_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
+                        <ImageView
+                            android:id="@+id/diem_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/diem" />
 
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
+                        <TextView
+                            android:id="@+id/diem_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Điểm"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
 
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView20"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__1_"-->
-                    <!--                                tools:ignore="DuplicateIds" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    </LinearLayout>
 
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView30"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Điểm"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
+                    <LinearLayout
+                        android:id="@+id/deadline_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                    </LinearLayout>-->
+                        <ImageView
+                            android:id="@+id/deadline_button"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/deadline" />
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
+                        <TextView
+                            android:id="@+id/deadline_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Deadline"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
+                    </LinearLayout>
 
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView21"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__2_" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    <LinearLayout
+                        android:id="@+id/lichthi_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView29"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Deadline"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
+                        <ImageView
+                            android:id="@+id/lichthi_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/lichthi" />
 
-                    <!--                    </LinearLayout>-->
+                        <TextView
+                            android:id="@+id/lichthi_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lịch thi"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/secondBar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView19"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__3_" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    <LinearLayout
+                        android:id="@+id/xephang_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView31"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Lịch thi"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
+                        <ImageView
+                            android:id="@+id/xephang_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/ranking" />
 
-                    <!--                    </LinearLayout>-->
-                    <!--                </LinearLayout>-->
+                        <TextView
+                            android:id="@+id/xephang_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Xếp hạng"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
 
-                    <!--                <LinearLayout-->
-                    <!--                    android:layout_width="match_parent"-->
-                    <!--                    android:layout_height="wrap_content"-->
-                    <!--                    android:orientation="horizontal">-->
+                    </LinearLayout>
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
+                    <LinearLayout
+                        android:id="@+id/hocphi_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
+                        <ImageView
+                            android:id="@+id/hocphi_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/fee" />
 
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView22"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__7_" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                        <TextView
+                            android:id="@+id/hocphi_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Học phí"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView32"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Xếp hạng"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
+                    </LinearLayout>
 
-                    <!--                    </LinearLayout>-->
+                    <LinearLayout
+                        android:id="@+id/tintuc_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
+                        <ImageView
+                            android:id="@+id/tintuc_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/news" />
 
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
+                        <TextView
+                            android:id="@+id/tintuc_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tin tức"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView23"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__5_" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Câu lạc bộ"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scrollbars="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView1"
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        app:cardCornerRadius="15dp"
+                        >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/trend_club"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CLB TIẾNG ANH UIT - OEC"
+                                android:layout_margin="15dp"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="20dp"
+                                android:text="Trau dồi kĩ năng Tiếng Anh cùng CLB Tiếng Anh tại UIT"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"/>
+                            <Button
+                                android:id="@+id/clbTA_btn"
+                                android:layout_marginLeft="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Đăng kí"/>
+                        </LinearLayout>
 
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView33"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Học phí"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
-
-                    <!--                    </LinearLayout>-->
-
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.6"-->
-                    <!--                        android:orientation="vertical">-->
-
-                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content">-->
-
-                    <!--                            <ImageView-->
-                    <!--                                android:id="@+id/imageView18"-->
-                    <!--                                android:layout_width="40dp"-->
-                    <!--                                android:layout_height="40dp"-->
-                    <!--                                android:layout_marginStart="10dp"-->
-                    <!--                                android:layout_marginTop="20dp"-->
-                    <!--                                android:layout_marginEnd="10dp"-->
-                    <!--                                android:layout_marginBottom="14dp"-->
-                    <!--                                android:src="@tools:sample/avatars"-->
-                    <!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                                app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                                app:layout_constraintVertical_bias="1.0"-->
-                    <!--                                tools:srcCompat="@drawable/vector__6_" />-->
-                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-                    <!--                        <TextView-->
-                    <!--                            android:id="@+id/textView28"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:gravity="center"-->
-                    <!--                            android:text="Tin tức"-->
-                    <!--                            android:textSize="16sp"-->
-                    <!--                            android:textStyle="bold" />-->
-
-                    <!--                    </LinearLayout>-->
-                    <!--                </LinearLayout>-->
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cuc_thi"/>
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </ScrollView>
 
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -374,162 +367,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/footer_layout"
+            app:itemBackground="@color/primary_color"
+            app:itemTextColor="@drawable/select_bottom_item"
+            app:itemIconTint="@drawable/select_bottom_item"
             android:id="@+id/bottomnav"
             >
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
-
-
-
-
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:id="@+id/bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
-
-<!--    <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--        android:id="@+id/app_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        app:backgroundTint="@color/white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_insetEdge="bottom"-->
-<!--        tools:ignore="BottomAppBar">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.25"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/home_button"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:src="@drawable/home_bottom_btn" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/home_text"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Trang chủ"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/xam" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.25"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/tkb_button"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:src="@drawable/tkb_bottom_btn" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tkb_text"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="TKB"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/xam" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.25"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/qr_button"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:src="@drawable/qr_bottom_btn" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/qr_text"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Điểm danh"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/xam" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.25"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/subject_button"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:src="@drawable/subject_bottom_btn" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/subject_text"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Môn học"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/xam" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/profileBtn"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.25"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/individual_button"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:src="@drawable/individual_bottom_btn" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/individual_text"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Cá nhân"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/primary_color" />-->
-
-<!--            </LinearLayout>-->
-
-<!--        </LinearLayout>-->
-
-<!--    </com.google.android.material.bottomappbar.BottomAppBar>-->
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

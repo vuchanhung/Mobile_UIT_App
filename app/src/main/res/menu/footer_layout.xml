@@ -6,18 +6,18 @@
         android:icon="@drawable/home_bottom_btn"/>
     <item
         android:title="TKB"
-        android:id="@+id/TKB"
+        android:id="@+id/nut_TKB"
         android:icon="@drawable/tkb_bottom_btn"/>
     <item
         android:title="QR"
-        android:id="@+id/qr_button"
+        android:id="@+id/nut_qr"
         android:icon="@drawable/qr_bottom_btn"/>
     <item
         android:title="Subject"
-        android:id="@+id/subject_button"
+        android:id="@+id/nut_subject"
         android:icon="@drawable/subject_bottom_btn"/>
     <item
-        android:title="nut_ca_nhan"
-        android:id="@+id/individual_button"
+        android:title="Personal"
+        android:id="@+id/nut_individual"
         android:icon="@drawable/individual_bottom_btn"/>
 </menu>

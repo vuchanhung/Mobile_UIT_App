@@ -1,79 +1,76 @@
 package com.example.bigproject.Activity;
 
-import static com.example.bigproject.Utils.ScheduleUtils.daysInWeekArray;
-import static com.example.bigproject.Utils.ScheduleUtils.monthYearFromDate;
 
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.view.MenuItem;
+import android.widget.CalendarView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bigproject.Adapter.ScheduleAdapter;
 import com.example.bigproject.R;
-import com.example.bigproject.Utils.ScheduleUtils;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DatabaseReference;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
-public class Schedule extends AppCompatActivity implements ScheduleAdapter.OnItemListener {
-
-    private TextView monthYearText;
-    private RecyclerView calendarRecyclerView;
-
+public class Schedule extends AppCompatActivity  {
+    private CalendarView calendarView;
+    private String dateSelected;
+    private DatabaseReference dbReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedule_main);
-        initWidgets();
-        setWeekView();
+
+        calendarView = findViewById(R.id.calendarView);
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                dateSelected = Integer.toString(year)+Integer.toString(month)+Integer.toString(dayOfMonth);
+                calendarClicked();
+
+            }
+        });
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_TKB);
+
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_subject){
+                    startActivity(new Intent(getApplicationContext(), Subject.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_home)
+                {
+                    startActivity(new Intent(getApplicationContext(), Home.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_qr)
+                {
+                    startActivity(new Intent(getApplicationContext(), Diemdanh.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_individual)
+                {
+                    startActivity(new Intent(getApplicationContext(), Setting_Activity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }
+
+                return false;
+            }
+        });
     }
 
-    private void initWidgets() {
-        calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
-        monthYearText = findViewById(R.id.monthYearTV);
+    private void calendarClicked(){
 
     }
-
-    private void setWeekView() {
-        if (ScheduleUtils.selectedDate != null) {
-            monthYearText.setText(monthYearFromDate(ScheduleUtils.selectedDate));
-            ArrayList<LocalDate> days = daysInWeekArray(ScheduleUtils.selectedDate);
-
-
-            ScheduleAdapter calendarAdapter = new ScheduleAdapter(days, this);
-            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
-            calendarRecyclerView.setLayoutManager(layoutManager);
-            calendarRecyclerView.setAdapter(calendarAdapter);
-        }
-
-    }
-
-
-    public void previousWeekAction(View view) {
-        ScheduleUtils.selectedDate = ScheduleUtils.selectedDate.minusWeeks(1);
-        setWeekView();
-    }
-
-    public void nextWeekAction(View view) {
-        ScheduleUtils.selectedDate = ScheduleUtils.selectedDate.plusWeeks(1);
-        setWeekView();
-    }
-
-    @Override
-    public void onItemClick(int position, LocalDate date) {
-        ScheduleUtils.selectedDate = date;
-        setWeekView();
-    }
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-    }
-
 
 }
 

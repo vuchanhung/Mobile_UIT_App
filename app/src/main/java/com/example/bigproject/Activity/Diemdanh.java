@@ -1,8 +1,10 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -50,6 +54,39 @@ public class Diemdanh extends AppCompatActivity {
             public void onClick(View view) {
                 // Xử lý khi nút được nhấn
                 guiThongTin();
+            }
+        });
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_qr);
+
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_TKB){
+                    startActivity(new Intent(getApplicationContext(), Schedule.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_home)
+                {
+                    startActivity(new Intent(getApplicationContext(), Home.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_subject)
+                {
+                    startActivity(new Intent(getApplicationContext(), Subject.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_individual)
+                {
+                    startActivity(new Intent(getApplicationContext(), Setting_Activity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }
+
+                return false;
             }
         });
     }

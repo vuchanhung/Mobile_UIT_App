@@ -3,14 +3,12 @@ package com.example.bigproject.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +17,7 @@ import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -37,6 +36,7 @@ public class Setting_Activity extends AppCompatActivity {
     private ImageView imageView;
 //    BottomNavigationView bottomNavigationView;
     private ImageButton semester;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,19 +45,20 @@ public class Setting_Activity extends AppCompatActivity {
         // Lấy thông tin người dùng từ SharedPreferences
         SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
         String mssv = preferences.getString("mssv", "");
-
+        initializeViews();
+        fetchDataFromFirestore(mssv);
         // Kiểm tra xem có MSSV trong SharedPreferences hay không
-        if (!TextUtils.isEmpty(mssv)) {
-            // Nếu có, hiển thị thông tin người dùng
-            initializeViews();
-            fetchDataFromFirestore(mssv);
-        } else {
-            // Nếu không có, chuyển về màn hình đăng nhập
-            Toast.makeText(this, "Vui lòng đăng nhập", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.login.class);
-            startActivity(intent);
-            finish();
-        }
+//        if (!TextUtils.isEmpty(mssv)) {
+//            // Nếu có, hiển thị thông tin người dùng
+//            initializeViews();
+//            fetchDataFromFirestore(mssv);
+//        } else {
+//            // Nếu không có, chuyển về màn hình đăng nhập
+//            Toast.makeText(this, "Vui lòng đăng nhập", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.login.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
         dangXuatButton = findViewById(R.id.dangnhap_btn);
         dangXuatButton.setOnClickListener(new View.OnClickListener() {
@@ -79,114 +80,44 @@ public class Setting_Activity extends AppCompatActivity {
             }
 
         });
-        LinearLayout bottomLayout = findViewById(R.id.bottomLayout);
-        BottomNavigationView bottomNavigationView = bottomLayout.findViewById(R.id.bottomnav);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-            if (itemId == R.id.nut_home) {
-                // Xử lý khi nhấn vào Trang chủ
-                if (!isMainActivity()) {
-                    openMainActivity();
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_individual);
+
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_TKB){
+                    startActivity(new Intent(getApplicationContext(), Schedule.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_qr)
+                {
+                    startActivity(new Intent(getApplicationContext(), Diemdanh.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_subject)
+                {
+                    startActivity(new Intent(getApplicationContext(), Subject.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_home)
+                {
+                    startActivity(new Intent(getApplicationContext(),  Home.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 }
-            } else if (itemId == R.id.TKB) {
-                openmenu();
-                // Xử lý khi nhấn vào Thực đơn
-            } else if (itemId == R.id.qr_button) {
-                // Xử lý khi nhấn vào Giỏ hàng
-                opengiohang();
-            } else if (itemId == R.id.subject_button) {
-                // Xử lý khi nhấn vào Giỏ hàng
-                opendonhang();
-            } else if (itemId == R.id.individual_button) {
-                // Xử lý khi nhấn vào Khác
-                openbagach();
+
+                return false;
             }
-            return true;
         });
 
+
         //Navigation
-//        LinearLayout profileBtn;
-//
-//        profileBtn = findViewById(R.id.profileBtn);
-//        profileBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
-//
-//        LinearLayout courseBtn;
-//
-//        courseBtn = findViewById(R.id.courseBtn);
-//        courseBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
-
-//        LinearLayout tkbBtn;
-
-//        tkbBtn = findViewById(R.id.tkbBtn);
-//        tkbBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
-
-//        LinearLayout diemdanhbtn;
-//
-//        diemdanhbtn = findViewById(R.id.diemdanh);
-//        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
 
 
-    }
-    private boolean isMainActivity() {
-        // Kiểm tra xem đang ở MainActivity hay không
-        return getClass().getSimpleName().equals(Home.class.getSimpleName());
-    }
-    private void openMainActivity() {
-        // Khởi tạo lại MainActivity
-        Intent intent = new Intent(this, Home.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-    private void openmenu() {
-        Intent intent = new Intent(this, Schedule.class);
-        startActivity(intent);
-    }
-    private void opengiohang() {
-        Intent intent = new Intent(this, Diemdanh.class);
-        startActivity(intent);
-    }
-    private void opendonhang() {
-        Intent intent = new Intent(this, Subject.class);
-        startActivity(intent);
-    }
-
-    private void openbagach() {
-        Intent intent = new Intent(this, Setting_Activity.class);
-        startActivity(intent);
     }
     private void initializeViews() {
         userNameTextView = findViewById(R.id.textView2);

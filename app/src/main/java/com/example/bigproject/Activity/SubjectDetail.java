@@ -1,16 +1,22 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -45,7 +51,43 @@ public class SubjectDetail extends AppCompatActivity {
         messagesCollection = db.collection("Score").document(idGroupchat).collection("Detail");
         checkExist(idGroupchat);
         hienThiDiem(mssv);
-}
+
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_subject);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_TKB){
+                    startActivity(new Intent(getApplicationContext(), Schedule.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_home)
+                {
+                    startActivity(new Intent(getApplicationContext(), Home.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_qr)
+                {
+                    startActivity(new Intent(getApplicationContext(), Diemdanh.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_individual)
+                {
+                    startActivity(new Intent(getApplicationContext(), Setting_Activity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }
+
+                return false;
+            }
+        });
+
+
+
+    }
+
     private void hienThiDiem(String mssv) {
         // Tham chiếu đến document của sinh viên trong subcollection "detail"
         DocumentReference sinhVienDocRef = messagesCollection.document(mssv);
