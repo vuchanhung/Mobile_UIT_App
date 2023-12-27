@@ -5,9 +5,11 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,6 +51,17 @@ public class NewsActivity extends AppCompatActivity {
                 Intent intent = new Intent(NewsActivity.this, DetailNewsActivity.class);
                 intent.putExtra("news", news.getId());  // Truyền dữ liệu tin tức sang trang chi tiết
                 startActivity(intent);
+            }
+        });
+        ConstraintLayout backBtnLayout = findViewById(R.id.back_btn);
+
+        // Đặt sự kiện onClick cho ConstraintLayout
+        backBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NewsActivity.this, com.example.bigproject.Activity.Home.class);
+                startActivity(intent);
+                finish();
             }
         });
         // Set the adapter to the RecyclerView

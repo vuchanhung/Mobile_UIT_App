@@ -5,12 +5,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,7 +52,17 @@ public class SubjectDetail extends AppCompatActivity {
         messagesCollection = db.collection("Score").document(idGroupchat).collection("Detail");
         checkExist(idGroupchat);
         hienThiDiem(mssv);
+        ConstraintLayout backBtnLayout = findViewById(R.id.back_btn);
 
+        // Đặt sự kiện onClick cho ConstraintLayout
+        backBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SubjectDetail.this, com.example.bigproject.Activity.Subject.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottomnav);
         bottomNavigationView.setSelectedItemId(R.id.nut_subject);

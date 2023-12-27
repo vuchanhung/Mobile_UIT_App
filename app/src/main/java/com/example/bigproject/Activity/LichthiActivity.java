@@ -1,10 +1,13 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +41,18 @@ public class LichthiActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
         String mssv = preferences.getString("mssv", "");
+        // Tìm ConstraintLayout theo ID
+        ConstraintLayout backBtnLayout = findViewById(R.id.back_btn);
+
+        // Đặt sự kiện onClick cho ConstraintLayout
+        backBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LichthiActivity.this, com.example.bigproject.Activity.Home.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         db.collection("User")
                 .document(mssv)
                 .get()

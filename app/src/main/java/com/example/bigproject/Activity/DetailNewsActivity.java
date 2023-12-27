@@ -1,12 +1,15 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.bumptech.glide.Glide;
 import com.example.bigproject.R;
@@ -33,7 +36,17 @@ public class DetailNewsActivity extends AppCompatActivity {
         titleTextView = findViewById(R.id.titletintuc);
         contentTextView = findViewById(R.id.contenttintuc);
         imageView = findViewById(R.id.imagetintuc);
+        ConstraintLayout backBtnLayout = findViewById(R.id.back_btn);
 
+        // Đặt sự kiện onClick cho ConstraintLayout
+        backBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailNewsActivity.this, com.example.bigproject.Activity.NewsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         db = FirebaseFirestore.getInstance();
 
         db.collection("News")
