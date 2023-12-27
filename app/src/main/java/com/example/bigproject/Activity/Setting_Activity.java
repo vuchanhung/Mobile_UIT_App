@@ -35,7 +35,7 @@ public class Setting_Activity extends AppCompatActivity {
     private FirebaseFirestore db;
     private ImageView imageView;
 //    BottomNavigationView bottomNavigationView;
-    private ImageButton semester;
+    private ImageButton semester,btnSemesterResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,16 @@ public class Setting_Activity extends AppCompatActivity {
             }
         });
 
-        semester = findViewById(R.id.imageButton2);
+        btnSemesterResult = findViewById(R.id.btn_subject_result);
+        btnSemesterResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Subject.class));
+                finish();
+            }
+        });
+
+        semester = findViewById(R.id.btn_class);
         semester.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

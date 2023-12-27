@@ -1,5 +1,6 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class Chat extends AppCompatActivity {
     private FirebaseFirestore db;
     private CollectionReference messagesCollection;
     private ListenerRegistration messagesListenerRegistration;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,15 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendMessage(mssv);
+            }
+        });
+
+        backButton=findViewById(R.id.back_btn_chat);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Subject.class));
+                finish();
             }
         });
     }

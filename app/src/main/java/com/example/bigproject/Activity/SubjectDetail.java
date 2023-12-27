@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,8 @@ public class SubjectDetail extends AppCompatActivity {
     private FirebaseFirestore db;
     private TextView textViewQT, textViewGK, textViewCK, textViewTH, textViewTB;
     private CollectionReference messagesCollection;
+
+    private ImageButton backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +55,14 @@ public class SubjectDetail extends AppCompatActivity {
         messagesCollection = db.collection("Score").document(idGroupchat).collection("Detail");
         checkExist(idGroupchat);
         hienThiDiem(mssv);
+
+//        backButton = findViewById(R.id.back_btn_subject_detail);
+//        backButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottomnav);
