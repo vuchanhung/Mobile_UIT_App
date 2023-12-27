@@ -3,11 +3,14 @@ package com.example.bigproject.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +45,7 @@ public class Setting_Activity extends AppCompatActivity {
         // Lấy thông tin người dùng từ SharedPreferences
         SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
         String mssv = preferences.getString("mssv", "");
+        db = FirebaseFirestore.getInstance();
         initializeViews();
         fetchDataFromFirestore(mssv);
         // Kiểm tra xem có MSSV trong SharedPreferences hay không
@@ -80,57 +84,57 @@ public class Setting_Activity extends AppCompatActivity {
 
 
         //Navigation
-//        LinearLayout profileBtn;
-//
-//        profileBtn = findViewById(R.id.profileBtn);
-//        profileBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
-//
-//        LinearLayout courseBtn;
-//
-//        courseBtn = findViewById(R.id.courseBtn);
-//        courseBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
+        LinearLayout profileBtn;
 
-//        LinearLayout tkbBtn;
+        profileBtn = findViewById(R.id.profileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
+                startActivity(intent);
+                finish();
+            }
 
-//        tkbBtn = findViewById(R.id.tkbBtn);
-//        tkbBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
+        });
 
-//        LinearLayout diemdanhbtn;
-//
-//        diemdanhbtn = findViewById(R.id.diemdanh);
-//        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
+        LinearLayout courseBtn;
+
+        courseBtn = findViewById(R.id.courseBtn);
+        courseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
+
+        LinearLayout tkbBtn;
+
+        tkbBtn = findViewById(R.id.tkbBtn);
+        tkbBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
+
+        LinearLayout diemdanhbtn;
+
+        diemdanhbtn = findViewById(R.id.diemdanh);
+        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
 //        LinearLayout bottomLayout = findViewById(R.id.bottomLayout);
 //        BottomNavigationView bottomNavigationView = bottomLayout.findViewById(R.id.bottomnav);
 //        bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -158,7 +162,6 @@ public class Setting_Activity extends AppCompatActivity {
 //            }
 //            return true;
 //        });
-
     }
 //    private boolean isMainActivity() {
 //        // Kiểm tra xem đang ở MainActivity hay không
@@ -202,7 +205,6 @@ public class Setting_Activity extends AppCompatActivity {
         phoneTextView = findViewById(R.id.phone_text);
         imageView = findViewById(R.id.imageView6);
         addressTexView = findViewById(R.id.location_text);
-        db = FirebaseFirestore.getInstance();
     }
 
     private void fetchDataFromFirestore(String mssv) {
@@ -237,7 +239,8 @@ public class Setting_Activity extends AppCompatActivity {
                                 // Không tìm thấy dữ liệu, xử lý theo ý bạn
                             }
                         } else {
-                            // Xử lý khi có lỗi xảy ra trong quá trình đọc dữ liệu
+                            Toast.makeText(Setting_Activity.this, "Lỗi khi truy cập Firebase", Toast.LENGTH_SHORT).show();
+                            Log.e("FirestoreConnection", "Error connecting to Firestore", task.getException());
                         }
                     }
                 });

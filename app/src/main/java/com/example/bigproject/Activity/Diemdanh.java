@@ -19,9 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
-
 public class Diemdanh extends AppCompatActivity {
 //    private EditText editTextMaLop;
     private Spinner spinnerMaLop;
@@ -37,7 +39,7 @@ public class Diemdanh extends AppCompatActivity {
 //        String mssv = preferences.getString("mssv", "");
 
         db = FirebaseFirestore.getInstance();
-
+//        db.clearPersistence();
 //        editTextMaLop = findViewById(R.id.editTextMaLop);
         spinnerMaLop = findViewById(R.id.spinnerMaLop);
         buttonGui = findViewById(R.id.buttonGui);
@@ -54,6 +56,8 @@ public class Diemdanh extends AppCompatActivity {
         });
     }
     private void loadEnrolledClasses(String mssv) {
+        Log.d("mssv", "mssv load: " + mssv);
+
         // Truy cập vào bảng User để lấy danh sách mã lớp
         db.collection("User").document(mssv).get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -127,6 +131,7 @@ public class Diemdanh extends AppCompatActivity {
     }
 
     private void layDuLieuHocSinh(final String mssv, final String maLop) {
+
         // Truy cập vào bảng Diemdanh
         db.collection("Diemdanh").document(maLop).get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -144,11 +149,26 @@ public class Diemdanh extends AppCompatActivity {
                                     if (mssvHocSinh.equals(mssv)) {
                                         // Tìm thấy học sinh có mssv trùng khớp
                                         int solanDiemDanh = Integer.parseInt(String.valueOf(hocSinh.get("solandiemdanh")));
+                                        Log.d("Diemanh", "solanDiemDanh lớp: " + solanDiemDanh);
+
                                         solanDiemDanh++; // Tăng giá trị lên 1
                                         hocSinh.put("solandiemdanh", solanDiemDanh); // Cập nhật giá trị trong Map
 
+                                        // Thêm thời gian điểm danh vào mảng "note"
+                                        ArrayList<String> noteList = (ArrayList<String>) hocSinh.get("note");
+                                        if (noteList == null) {
+                                            noteList = new ArrayList<>();
+                                        }
+
+                                        // Thêm thời gian mới vào mảng "note"
+                                        String thoiGianDiemDanh = getCurrentTimestamp(); // Hàm này để lấy thời gian hiện tại
+                                        noteList.add(thoiGianDiemDanh);
+
+                                        hocSinh.put("note", noteList);
+
                                         // Cập nhật dữ liệu trong Firebase Firestore
                                         updateDiemDanhData(maLop, hocsinh);
+                                        // Toast.makeText(Diemdanh.this, "Điểm danh thành công", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             } else {
@@ -160,7 +180,10 @@ public class Diemdanh extends AppCompatActivity {
                     }
                 });
     }
-
+    private String getCurrentTimestamp() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        return sdf.format(new Date());
+    }
     private void updateDiemDanhData(String maLop, ArrayList<Map<String, Object>> hocsinh) {
         // Cập nhật dữ liệu trong Firebase Firestore
         db.collection("Diemdanh").document(maLop)
