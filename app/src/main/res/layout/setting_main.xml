@@ -15,345 +15,345 @@
         app:layout_constraintRight_toRightOf="parent"
         >
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_uit">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="142dp"
-                    android:layout_marginBottom="-15dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/arc_3"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
-                    android:layout_marginTop="96dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Lê Anh Tuấn"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="20520948"
-                android:textAlignment="center" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/ranking_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/ranking"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/ranking_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="KẾT QUẢ HỌC TẬP"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/ranking_button"
-                    app:layout_constraintStart_toEndOf="@+id/ranking_button"
-                    app:layout_constraintTop_toTopOf="@+id/ranking_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@color/white"
-                    android:src="@drawable/arrow_forward"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/ranking_text"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/class_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/class_btn"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/class_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="TMCL2020"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/class_button"
-                    app:layout_constraintStart_toEndOf="@+id/class_button"
-                    app:layout_constraintTop_toTopOf="@+id/class_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="157dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@color/white"
-                    android:src="@drawable/arrow_forward"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.984"
-                    app:layout_constraintStart_toEndOf="@+id/class_text"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/mail_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/mail_btn"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/mail_text"
-                    android:layout_width="236dp"
-                    android:layout_height="25dp"
-                    android:layout_marginStart="16dp"
-                    android:text="20520948@gm.uit.edu.vn"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/mail_button"
-                    app:layout_constraintStart_toEndOf="@+id/mail_button"
-                    app:layout_constraintTop_toTopOf="@+id/mail_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/birthday_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/birthday_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/birthday_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="26/03/2002"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/birthday_button"
-                    app:layout_constraintStart_toEndOf="@+id/birthday_button"
-                    app:layout_constraintTop_toTopOf="@+id/birthday_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/domain_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/domain_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/domain_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="Thương Mại Điện Tử"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/domain_button"
-                    app:layout_constraintStart_toEndOf="@+id/domain_button"
-                    app:layout_constraintTop_toTopOf="@+id/domain_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/location_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/location_btn"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/location_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="TP.Thủ Đức, TP.Hồ Chí Minh"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/location_button"
-                    app:layout_constraintStart_toEndOf="@+id/location_button"
-                    app:layout_constraintTop_toTopOf="@+id/location_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/phone_button"
-                    android:layout_width="35dp"
-                    android:layout_height="33dp"
-                    android:src="@drawable/phone_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/phone_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="0987 654 321"
-                    android:textColor="@color/primary_color"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/phone_button"
-                    app:layout_constraintStart_toEndOf="@+id/phone_button"
-                    app:layout_constraintTop_toTopOf="@+id/phone_button"
-                    app:layout_constraintVertical_bias="0.50" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <Button
-                android:id="@+id/dangnhap_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/button_border_radius_2"
-                android:text="Đăng xuất"
-                android:textColor="@color/red" />
+            android:layout_marginBottom="65dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_uit">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="142dp"
+                        android:layout_marginBottom="-15dp"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/arc_3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="96dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Lê Anh Tuấn"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20520948"
+                    android:textAlignment="center" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/ranking_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/ranking"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ranking_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="KẾT QUẢ HỌC TẬP"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ranking_button"
+                        app:layout_constraintStart_toEndOf="@+id/ranking_button"
+                        app:layout_constraintTop_toTopOf="@+id/ranking_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@color/white"
+                        android:src="@drawable/arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/ranking_text"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/class_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/class_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/class_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="TMCL2020"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/class_button"
+                        app:layout_constraintStart_toEndOf="@+id/class_button"
+                        app:layout_constraintTop_toTopOf="@+id/class_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="157dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@color/white"
+                        android:src="@drawable/arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.984"
+                        app:layout_constraintStart_toEndOf="@+id/class_text"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/mail_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/mail_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mail_text"
+                        android:layout_width="236dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="16dp"
+                        android:text="20520948@gm.uit.edu.vn"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mail_button"
+                        app:layout_constraintStart_toEndOf="@+id/mail_button"
+                        app:layout_constraintTop_toTopOf="@+id/mail_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/birthday_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/birthday_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/birthday_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="26/03/2002"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/birthday_button"
+                        app:layout_constraintStart_toEndOf="@+id/birthday_button"
+                        app:layout_constraintTop_toTopOf="@+id/birthday_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/domain_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/domain_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/domain_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Thương Mại Điện Tử"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/domain_button"
+                        app:layout_constraintStart_toEndOf="@+id/domain_button"
+                        app:layout_constraintTop_toTopOf="@+id/domain_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/location_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/location_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/location_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="TP.Thủ Đức, TP.Hồ Chí Minh"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/location_button"
+                        app:layout_constraintStart_toEndOf="@+id/location_button"
+                        app:layout_constraintTop_toTopOf="@+id/location_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/phone_button"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/phone_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/phone_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="0987 654 321"
+                        android:textColor="@color/primary_color"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/phone_button"
+                        app:layout_constraintStart_toEndOf="@+id/phone_button"
+                        app:layout_constraintTop_toTopOf="@+id/phone_button"
+                        app:layout_constraintVertical_bias="0.50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/dangnhap_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/button_border_radius_2"
+                    android:text="Đăng xuất"
+                    android:textColor="@color/red" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-    </ScrollView>
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -366,7 +366,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/footer_layout"
-            app:itemBackground="@color/primary_color"
+            app:itemBackground="@color/start_color"
             app:itemTextColor="@drawable/select_bottom_item"
             app:itemIconTint="@drawable/select_bottom_item"
             android:id="@+id/bottomnav"
