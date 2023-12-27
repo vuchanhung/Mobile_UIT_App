@@ -15,7 +15,6 @@ import com.example.bigproject.Adapter.SeminarAdapter;
 import com.example.bigproject.Adapter.TrendsAdapter;
 import com.example.bigproject.Domain.SeminarDomain;
 import com.example.bigproject.Domain.TrendsDomain;
-import com.example.bigproject.R;
 
 import java.util.ArrayList;
 
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new TrendsDomain("CLB TIẾNG ANH UIT - OEC","Trau dồi kĩ năng Tiếng Anh cùng CLB Tiếng Anh tại UIT","trend_club"));
         items.add(new TrendsDomain("CLB TIẾNG ANH UIT - OEC","Trau dồi kĩ năng Tiếng Anh cùng CLB Tiếng Anh tại UIT","trend_club"));
 
-        recyclerViewTrends=findViewById(R.id.club_list_detail);
+//        recyclerViewTrends=findViewById(R.id.club_list_detail);
         recyclerViewTrends.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
         adapterTrendsList= new TrendsAdapter(items);
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new SeminarDomain("UIT SEMINAR: Tháng 10 này có gì?","By UIT","seminar"));
         items.add(new SeminarDomain("Sky Mavis Uni Tour - AXIE GAME JAM 2023","By UIT","seminar2"));
 
-        recyclerViewSeminar=findViewById(R.id.seminar_list_detail);
+//        recyclerViewSeminar=findViewById(R.id.seminar_list_detail);
         try {
             recyclerViewTrends.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         } catch (NullPointerException e) {

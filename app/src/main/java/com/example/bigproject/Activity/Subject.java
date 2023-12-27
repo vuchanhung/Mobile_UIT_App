@@ -7,7 +7,6 @@
     import android.os.Bundle;
     import android.util.Log;
     import android.view.MenuItem;
-    import android.widget.LinearLayout;
 
     import androidx.annotation.NonNull;
     import androidx.appcompat.app.AppCompatActivity;

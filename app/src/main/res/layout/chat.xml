@@ -10,38 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/start_color"
-        android:padding="10dp"
+        android:padding="20dp"
         android:id="@+id/toolbar">
 
         <TextView
+            android:id="@+id/other_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:text="CHAT"
             android:textColor="@color/white"
-            android:layout_marginStart="10dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/profile_pic_layout"
-            android:id="@+id/other_username"
-            />
-
-        <include layout="@layout/profile_pic_view"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="10dp"
-            android:layout_toRightOf="@id/back_btn"
-            android:id="@+id/profile_pic_layout"
-            />
-
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/arrow_back_btn"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:tint="@color/white"
-            android:layout_centerVertical="true"
-            android:id="@+id/back_btn"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
