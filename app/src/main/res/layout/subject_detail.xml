@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/back_btn_subject_detail"
                     android:layout_width="37dp"
                     android:layout_height="33dp"
                     android:src="@drawable/arrow_back_btn"
