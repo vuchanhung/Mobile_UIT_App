@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/thoidiemthi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -25,17 +25,27 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/cathi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:text="CA 2: 9H30 - ECxxx.xxx.TMCL ( An toàn bảo mật TMĐT)"
+            android:text="CA 2: 9H30"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/tenmon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/red"
+            android:text="Môn: THỰC TẬP DOANH NGHIỆP"
+            android:textStyle="bold"
             android:textSize="15dp"/>
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/phong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

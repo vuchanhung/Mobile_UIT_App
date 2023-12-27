@@ -34,7 +34,7 @@ public class Setting_Activity extends AppCompatActivity {
     private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
-//    BottomNavigationView bottomNavigationView;
+    //    BottomNavigationView bottomNavigationView;
     private ImageButton semester;
 
     @Override
@@ -70,16 +70,6 @@ public class Setting_Activity extends AppCompatActivity {
             }
         });
 
-        semester = findViewById(R.id.imageButton2);
-        semester.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Semester.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottomnav);
         bottomNavigationView.setSelectedItemId(R.id.nut_individual);

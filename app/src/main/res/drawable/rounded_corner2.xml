@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tạo một gradient cho shape -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sử dụng gradient thay vì solid color -->
+    <gradient
+        android:startColor="@color/primary_color"
+    android:endColor="@color/start_color"
+    android:type="linear"
+    android:angle="0" />
+
+    <!-- Các thuộc tính khác của shape -->
+    <corners android:radius="200dp" />
+</shape>
