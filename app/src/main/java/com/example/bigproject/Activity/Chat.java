@@ -1,5 +1,6 @@
 package com.example.bigproject.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class Chat extends AppCompatActivity {
     private FirebaseFirestore db;
     private CollectionReference messagesCollection;
     private ListenerRegistration messagesListenerRegistration;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class Chat extends AppCompatActivity {
                 sendMessage(mssv);
             }
         });
+
     }
 
     private void setupFirestoreListener(String idGroupchat) {
