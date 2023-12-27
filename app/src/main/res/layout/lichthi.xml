@@ -44,7 +44,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TIN TỨC"
+                android:text="LỊCH THI"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -56,10 +56,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </LinearLayout>
-
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -69,30 +66,5 @@
         app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/bottomLayout"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            >-->
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:menu="@menu/footer_layout"-->
-<!--                app:itemBackground="@color/primary_color"-->
-<!--                app:itemTextColor="@drawable/select_bottom_item"-->
-<!--                app:itemIconTint="@drawable/select_bottom_item"-->
-<!--                android:id="@+id/bottomnav"-->
-<!--                >-->
-
-<!--            </com.google.android.material.bottomnavigation.BottomNavigationView>-->
-<!--        </LinearLayout>-->
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

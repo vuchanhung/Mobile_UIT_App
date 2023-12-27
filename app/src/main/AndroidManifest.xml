@@ -73,6 +73,10 @@
             android:name=".Activity.DetailNewsActivity">
             <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
         </activity>
+        <activity
+            android:name=".Activity.LichthiActivity">
+            <!-- Thêm các cài đặt khác cho LogoActivity nếu có -->
+        </activity>
     </application>
 
 </manifest>
