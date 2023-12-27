@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +19,6 @@ import com.google.android.material.navigation.NavigationBarView;
 public class Home extends AppCompatActivity {
     Button xemthem_btn;
     Button clb_AV_btn;
-
-    ImageButton btn_news,btn_score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,25 +36,57 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Home.this, com.example.bigproject.Activity.NewsActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
         });
 
-        btn_news = findViewById(R.id.tintuc_btn);
-        btn_score = findViewById(R.id.diem_button);
-        btn_news.setOnClickListener(new View.OnClickListener() {
+        LinearLayout lichthiButton = findViewById(R.id.lichthi_button);
+        lichthiButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), NewsActivity.class));
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, com.example.bigproject.Activity.LichthiActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish();
+            }
+        });
+        LinearLayout diem = findViewById(R.id.diem_btn);
+        diem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Home.this, "Chức năng sẽ sớm được hoạt động !", Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout hocphi = findViewById(R.id.hocphi_button);
+        hocphi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Home.this, "Chức năng sẽ sớm được hoạt động !", Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout dl = findViewById(R.id.deadline_btn);
+        dl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Home.this, "Chức năng sẽ sớm được hoạt động !", Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout hp = findViewById(R.id.hocphi_button);
+        hp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Home.this, "Chức năng sẽ sớm được hoạt động !", Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout xephang = findViewById(R.id.xephang_button);
+        xephang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Home.this, "Chức năng sẽ sớm được hoạt động !", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btn_score.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Subject.class));
-            }
-        });
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

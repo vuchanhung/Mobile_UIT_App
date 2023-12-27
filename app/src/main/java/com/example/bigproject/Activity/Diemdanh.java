@@ -117,7 +117,7 @@ public class Diemdanh extends AppCompatActivity {
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                                         String selectedMaLop = adapterView.getItemAtPosition(position).toString();
                                         // Log ra mã lớp đã chọn (có thể thay bằng việc hiển thị thông tin khác)
-                                        Toast.makeText(Diemdanh.this, "Mã lớp đã chọn: " + selectedMaLop, Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(Diemdanh.this, "Mã lớp đã chọn: " + selectedMaLop, Toast.LENGTH_SHORT).show();
                                     }
 
                                     @Override
