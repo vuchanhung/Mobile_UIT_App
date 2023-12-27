@@ -61,6 +61,7 @@ public class NewsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewsActivity.this, com.example.bigproject.Activity.Home.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
         });
