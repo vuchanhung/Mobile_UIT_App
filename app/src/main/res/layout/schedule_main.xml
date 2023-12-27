@@ -208,7 +208,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Event"
+        android:text="Event"
         android:textColor="@color/black"
         android:background="@null"
         android:textStyle="bold"
@@ -221,5 +221,24 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/footer_layout"
+            app:itemBackground="@color/primary_color"
+            app:itemTextColor="@drawable/select_bottom_item"
+            app:itemIconTint="@drawable/select_bottom_item"
+            android:id="@+id/bottomnav"
+            >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </LinearLayout>
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.bigproject.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,57 +14,60 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bigproject.Activity.Schedule;
 import com.example.bigproject.Model.Event;
 import com.example.bigproject.R;
+import com.example.bigproject.Utils.CalendarUtils;
+import com.example.bigproject.ViewHolder.CalendarViewHolder;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.EventViewHolder>{
-    private Context context;
-    private List<Event> eventList;
+public class ScheduleAdapter extends RecyclerView.Adapter<CalendarViewHolder>{
+    private final ArrayList<LocalDate> days;
+    private final OnItemListener onItemListener;
 
-    public ScheduleAdapter(Context context, List<Event> eventList) {
-        this.context = context;
-        this.eventList = eventList;
+    public ScheduleAdapter(ArrayList<LocalDate> days, OnItemListener onItemListener)
+    {
+        this.days = days;
+        this.onItemListener = onItemListener;
     }
 
     @NonNull
     @Override
-    public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.viewholder_event_list, parent, false);
-        return new EventViewHolder(view);
+    public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.calendar_cell, parent, false);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        if(days.size() > 15) //month view
+            layoutParams.height = (int) (parent.getHeight() * 0.166666666);
+        else // week view
+            layoutParams.height = (int) parent.getHeight();
+
+        return new CalendarViewHolder(view, onItemListener, days);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
-        Event event = eventList.get(position);
-        holder.eventClassTitle.setText(event.getSubjectTitle());
-        holder.eventLecturerName.setText(event.getLecturerName());
-        holder.eventClassNumber.setText(event.getClassNumber());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Schedule.class);
-//                intent.putExtra("event", event);
-                context.startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return eventList.size();
-    }
-
-    public static class EventViewHolder extends RecyclerView.ViewHolder {
-        TextView eventClassTitle;
-        TextView eventLecturerName;
-        TextView eventClassNumber;
-
-
-        public EventViewHolder(@NonNull View itemView) {
-            super(itemView);
-            eventClassTitle = itemView.findViewById(R.id.classTitle);
-            eventLecturerName = itemView.findViewById(R.id.lecturerName);
-            eventClassNumber = itemView.findViewById(R.id.classNumber);
+    public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position)
+    {
+        final LocalDate date = days.get(position);
+        if(date == null)
+            holder.dayOfMonth.setText("");
+        else
+        {
+            holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
+            if(date.equals(CalendarUtils.selectedDate))
+                holder.parentView.setBackgroundColor(Color.LTGRAY);
         }
+    }
+
+    @Override
+    public int getItemCount()
+    {
+        return days.size();
+    }
+
+    public interface  OnItemListener
+    {
+        void onItemClick(int position, LocalDate date);
     }
 }
