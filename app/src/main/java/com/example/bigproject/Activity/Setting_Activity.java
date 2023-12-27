@@ -3,14 +3,12 @@ package com.example.bigproject.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bigproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -34,7 +34,7 @@ public class Setting_Activity extends AppCompatActivity {
     private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
-//    BottomNavigationView bottomNavigationView;
+    //    BottomNavigationView bottomNavigationView;
     private ImageButton semester;
 
     @Override
@@ -45,7 +45,6 @@ public class Setting_Activity extends AppCompatActivity {
         // Lấy thông tin người dùng từ SharedPreferences
         SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
         String mssv = preferences.getString("mssv", "");
-        db = FirebaseFirestore.getInstance();
         initializeViews();
         fetchDataFromFirestore(mssv);
         // Kiểm tra xem có MSSV trong SharedPreferences hay không
@@ -81,120 +80,45 @@ public class Setting_Activity extends AppCompatActivity {
             }
 
         });
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_individual);
+
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_TKB){
+                    startActivity(new Intent(getApplicationContext(), Schedule.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_qr)
+                {
+                    startActivity(new Intent(getApplicationContext(), Diemdanh.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_subject)
+                {
+                    startActivity(new Intent(getApplicationContext(), Subject.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_home)
+                {
+                    startActivity(new Intent(getApplicationContext(),  Home.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }
+
+                return false;
+            }
+        });
 
 
         //Navigation
-        LinearLayout profileBtn;
 
-        profileBtn = findViewById(R.id.profileBtn);
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Setting_Activity.class);
-                startActivity(intent);
-                finish();
-            }
 
-        });
-
-        LinearLayout courseBtn;
-
-        courseBtn = findViewById(R.id.courseBtn);
-        courseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Subject.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
-
-        LinearLayout tkbBtn;
-
-        tkbBtn = findViewById(R.id.tkbBtn);
-        tkbBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Schedule.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
-
-        LinearLayout diemdanhbtn;
-
-        diemdanhbtn = findViewById(R.id.diemdanh);
-        diemdanhbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Setting_Activity.this, com.example.bigproject.Activity.Diemdanh.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
-//        LinearLayout bottomLayout = findViewById(R.id.bottomLayout);
-//        BottomNavigationView bottomNavigationView = bottomLayout.findViewById(R.id.bottomnav);
-//        bottomNavigationView.setOnItemSelectedListener(item -> {
-//            int itemId = item.getItemId();
-//            if (itemId == R.id.nut_home) {
-//                // Xử lý khi nhấn vào Trang chủ
-//                openMainActivity();
-//
-//                if (!isMainActivity()) {
-//                    openMainActivity();
-//                    return true;
-//                }
-//            } else if (itemId == R.id.TKB) {
-//                openmenu();
-//                // Xử lý khi nhấn vào Thực đơn
-//            } else if (itemId == R.id.qr_button) {
-//                // Xử lý khi nhấn vào Giỏ hàng
-//                opengiohang();
-//            } else if (itemId == R.id.subject_button) {
-//                // Xử lý khi nhấn vào Giỏ hàng
-//                opendonhang();
-//            } else if (itemId == R.id.individual_button) {
-//                // Xử lý khi nhấn vào Khác
-//                openbagach();
-//            }
-//            return true;
-//        });
     }
-//    private boolean isMainActivity() {
-//        // Kiểm tra xem đang ở MainActivity hay không
-//        return getClass().getSimpleName().equals(Home.class.getSimpleName());
-//    }
-//    private void openMainActivity() {
-//        // Khởi tạo lại MainActivity
-//        Intent intent = new Intent(this, Home.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent);
-//        finish();
-//    }
-////    private void openMainActivity() {
-////        Intent intent = new Intent(this, Home.class);
-////        startActivity(intent);
-////    }
-//    private void openmenu() {
-//        Intent intent = new Intent(this, Schedule.class);
-//        startActivity(intent);
-//    }
-//    private void opengiohang() {
-//        Intent intent = new Intent(this, Diemdanh.class);
-//        startActivity(intent);
-//    }
-//    private void opendonhang() {
-//        Intent intent = new Intent(this, Subject.class);
-//        startActivity(intent);
-//    }
-//
-//    private void openbagach() {
-//        Intent intent = new Intent(this, Setting_Activity.class);
-//        startActivity(intent);
-//    }
     private void initializeViews() {
         userNameTextView = findViewById(R.id.textView2);
         mssvTextView = findViewById(R.id.textView3);
@@ -205,6 +129,7 @@ public class Setting_Activity extends AppCompatActivity {
         phoneTextView = findViewById(R.id.phone_text);
         imageView = findViewById(R.id.imageView6);
         addressTexView = findViewById(R.id.location_text);
+        db = FirebaseFirestore.getInstance();
     }
 
     private void fetchDataFromFirestore(String mssv) {
@@ -239,8 +164,7 @@ public class Setting_Activity extends AppCompatActivity {
                                 // Không tìm thấy dữ liệu, xử lý theo ý bạn
                             }
                         } else {
-                            Toast.makeText(Setting_Activity.this, "Lỗi khi truy cập Firebase", Toast.LENGTH_SHORT).show();
-                            Log.e("FirestoreConnection", "Error connecting to Firestore", task.getException());
+                            // Xử lý khi có lỗi xảy ra trong quá trình đọc dữ liệu
                         }
                     }
                 });
