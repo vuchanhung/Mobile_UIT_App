@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,8 @@ import com.google.android.material.navigation.NavigationBarView;
 public class Home extends AppCompatActivity {
     Button xemthem_btn;
     Button clb_AV_btn;
+
+    ImageButton btn_news,btn_score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,22 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(Home.this, com.example.bigproject.Activity.NewsActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        btn_news = findViewById(R.id.tintuc_btn);
+        btn_score = findViewById(R.id.diem_button);
+        btn_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), NewsActivity.class));
+            }
+        });
+
+        btn_score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Subject.class));
             }
         });
 
