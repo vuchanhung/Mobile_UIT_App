@@ -1,6 +1,5 @@
 package com.example.bigproject.Activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +28,16 @@ public class Home extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.nut_home);
 
 
+
+        LinearLayout tintucButton = findViewById(R.id.tintuc_button);
+        tintucButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, com.example.bigproject.Activity.NewsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
