@@ -39,6 +39,16 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        LinearLayout lichthiButton = findViewById(R.id.lichthi_button);
+        lichthiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, com.example.bigproject.Activity.LichthiActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -44,7 +44,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TIN TỨC"
+                android:text="LỊCH THI"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -56,51 +56,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="484dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="78dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/bar"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="573dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="532dp" />
-    </LinearLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/bottomLayout"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            >-->
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:menu="@menu/footer_layout"-->
-<!--                app:itemBackground="@color/primary_color"-->
-<!--                app:itemTextColor="@drawable/select_bottom_item"-->
-<!--                app:itemIconTint="@drawable/select_bottom_item"-->
-<!--                android:id="@+id/bottomnav"-->
-<!--                >-->
-
-<!--            </com.google.android.material.bottomnavigation.BottomNavigationView>-->
-<!--        </LinearLayout>-->
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,6 +43,7 @@
         android:background="@drawable/edittext_border_radius"
         android:hint="MSSV"
         android:padding="15sp"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_logo"
