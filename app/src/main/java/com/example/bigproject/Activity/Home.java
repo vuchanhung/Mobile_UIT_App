@@ -1,79 +1,83 @@
 package com.example.bigproject.Activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bigproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class Home extends AppCompatActivity {
+    Button xemthem_btn;
+    Button clb_AV_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_main);
-        LinearLayout bottomLayout = findViewById(R.id.bottomLayout);
-        BottomNavigationView bottomNavigationView = bottomLayout.findViewById(R.id.bottomnav);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-            if (itemId == R.id.nut_home) {
-                // Xử lý khi nhấn vào Trang chủ
-                openMainActivity();
 
-                if (!isMainActivity()) {
-                    openMainActivity();
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottomnav);
+        bottomNavigationView.setSelectedItemId(R.id.nut_home);
+
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nut_TKB){
+                    startActivity(new Intent(getApplicationContext(), Schedule.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_qr)
+                {
+                    startActivity(new Intent(getApplicationContext(), Diemdanh.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                } else if(item.getItemId() == R.id.nut_subject)
+                {
+                    startActivity(new Intent(getApplicationContext(), Subject.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                }else if(item.getItemId() == R.id.nut_individual)
+                {
+                    startActivity(new Intent(getApplicationContext(), Setting_Activity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 }
-            } else if (itemId == R.id.TKB) {
-                openmenu();
-                // Xử lý khi nhấn vào Thực đơn
-            } else if (itemId == R.id.qr_button) {
-                // Xử lý khi nhấn vào Giỏ hàng
-                opengiohang();
-            } else if (itemId == R.id.subject_button) {
-                // Xử lý khi nhấn vào Giỏ hàng
-                opendonhang();
-            } else if (itemId == R.id.individual_button) {
-                // Xử lý khi nhấn vào Khác
-                openbagach();
+
+                return false;
             }
-            return true;
+        });
+//        button xem them
+        xemthem_btn = findViewById(R.id.xemthem_btn);
+        xemthem_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://student.uit.edu.vn/"));
+                startActivity(intent);
+            }
+        });
+
+
+        clb_AV_btn = findViewById(R.id.clbTA_btn);
+        clb_AV_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com/oeclub.uit"));
+                startActivity(intent);
+            }
         });
 
     }
-    private boolean isMainActivity() {
-        // Kiểm tra xem đang ở MainActivity hay không
-        return getClass().getSimpleName().equals(Home.class.getSimpleName());
-    }
-    private void openMainActivity() {
-        // Khởi tạo lại MainActivity
-        Intent intent = new Intent(this, Home.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-    //    private void openMainActivity() {
-//        Intent intent = new Intent(this, Home.class);
-//        startActivity(intent);
-//    }
-    private void openmenu() {
-        Intent intent = new Intent(this, Schedule.class);
-        startActivity(intent);
-    }
-    private void opengiohang() {
-        Intent intent = new Intent(this, Diemdanh.class);
-        startActivity(intent);
-    }
-    private void opendonhang() {
-        Intent intent = new Intent(this, Subject.class);
-        startActivity(intent);
-    }
 
-    private void openbagach() {
-        Intent intent = new Intent(this, Setting_Activity.class);
-        startActivity(intent);
-    }
 }
 
