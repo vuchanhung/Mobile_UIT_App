@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/footer_layout"
-            app:itemBackground="@color/primary_color"
+            app:itemBackground="@color/start_color"
             app:itemTextColor="@drawable/select_bottom_item"
             app:itemIconTint="@drawable/select_bottom_item"
             android:id="@+id/bottomnav">
