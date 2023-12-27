@@ -73,14 +73,6 @@ public class Chat extends AppCompatActivity {
             }
         });
 
-        backButton=findViewById(R.id.back_btn_chat);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Subject.class));
-                finish();
-            }
-        });
     }
 
     private void setupFirestoreListener(String idGroupchat) {
