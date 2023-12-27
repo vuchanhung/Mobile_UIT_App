@@ -34,7 +34,7 @@ public class Setting_Activity extends AppCompatActivity {
     private Button dangXuatButton;
     private FirebaseFirestore db;
     private ImageView imageView;
-//    BottomNavigationView bottomNavigationView;
+    //    BottomNavigationView bottomNavigationView;
     private ImageButton semester;
 
     @Override
