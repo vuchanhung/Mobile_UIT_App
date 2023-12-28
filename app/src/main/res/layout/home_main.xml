@@ -104,7 +104,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/lichthi" />
+                            android:src="@drawable/lichthi"
+                            android:background="@android:color/transparent" />
 
                         <TextView
                             android:id="@+id/lichthi_text"
@@ -129,7 +130,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/fee" />
+                            android:src="@drawable/fee"
+                            android:background="@android:color/transparent"/>
 
                         <TextView
                             android:id="@+id/hocphi_text"
@@ -155,7 +157,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/news" />
+                            android:src="@drawable/news"
+                            android:background="@android:color/transparent"/>
 
                         <TextView
                             android:id="@+id/tintuc_text"
@@ -192,7 +195,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/diem" />
+                            android:src="@drawable/diem"
+                            android:background="@android:color/transparent"/>
 
                         <TextView
                             android:id="@+id/diem_text"
@@ -218,7 +222,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/deadline" />
+                            android:src="@drawable/deadline"
+                            android:background="@android:color/transparent"/>
 
                         <TextView
                             android:id="@+id/deadline_text"
@@ -244,7 +249,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
-                            android:src="@drawable/ranking" />
+                            android:src="@drawable/ranking"
+                            android:background="@android:color/transparent"/>
 
                         <TextView
                             android:id="@+id/xephang_text"
